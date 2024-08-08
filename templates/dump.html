@@ -1,0 +1,86 @@
+<div id="div_id_report_type" class="form-group">
+                            <label for="report_type" class="control-label  requiredField">
+                                "What type of event is being reported?"
+                            </label>
+                            <div class="controls">
+                                <select name="report_type" id="div_id_report_type" class="select form-control" required>
+                                    <option value selected>---------</option>
+                                    <option value="Near Miss">Near Miss</option>
+                                    <option value="Dangerous Location">Dangerous Location</option>
+                                    <option value="Collision">Collision</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="div_id_travel_type" class="form-group">
+                            <label for="travel_type" class="control-label  requiredField">
+                                "At the time of the event, how were you traveling?"
+                            </label>
+                            <div class="controls">
+                                <select name="travel_type" id="div_id_travel_type" class="select form-control" required>
+                                    <option value selected>---------</option>
+                                    <option value="Walking/Rolling">Walking/Wheelchair</option>
+                                    <option value="Bicycle">Bicycle/E-Bike</option>
+                                    <option value="Driving">Driving</option>
+                                    <option value="Scooter">Scooter</option>
+                                    <option value="Moped">Motorcycle/Moped</option>
+                                    <option value="Witness">Witnessed Event</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="div_id_injury_type" class="form-group">
+                            <label for="injury_type" class="control-label  requiredField">
+                                "Were you injured?"
+                            </label>
+                            <div class="controls">
+                                <select name="injury_type" id="div_id_injury_type" class="select form-control" required>
+                                    <option value selected>---------</option>
+                                    <option value="No Inury">No Injury</option>
+                                    <option value="Medical Treatment Not Reguired">Medical Treatment Not Required</option>
+                                    <option value="Medical Treament Required">Medical Treatment Required</option>
+                                    <option value="Witness">Witnessed Event</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="div_id_indcident_type" class="form-group">
+                            <label for="incident_type" class="control-label  requiredField">
+                                "What type of event is being reported?"
+                            </label>
+                            <div class="controls">
+                                <select name="incident_type" id="div_id_indcident_type" class="select form-control"
+                                    required>
+                                    <option value selected>---------</option>
+                                    <option value="Collision1">Collision with Stationary Object or Vehicle</option>
+                                    <option value="Collision2">Collision with Moving Object or Vehicle</option>
+                                    <option value="Miss1">Near Miss with Stationary Object or Vehicle</option>
+                                    <option value="Miss2">Near Miss with Moving Object or Vehicle</option>
+                                    <option value="Unsafe">Unsafe Condition or Location</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            
+
+
+
+    <!-- success alert message -->
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Thank you!</h4>
+    <h5>Thank your for your submission to the Regional Near Miss Database.</h5>
+    <hr>
+    <h5 class="mb-0">See your pin on the Dashboard.</h5>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+
+  <!-- error alert message -->
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Error!</h4>
+    <h5>There has been a problem submitting your entry.</h5>
+    <hr>
+    <h5 class="mb-0">Please try again to ensure proper submission.</h5>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>

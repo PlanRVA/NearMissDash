@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regional Near Miss Dashboard</title>
+    <!-- style settings -->
+    <meta name="description" content="Map your transportation incidents and hazards.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body, .navbar, .navbar-brand, .nav-link, button {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .navbar {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<!-- begin body -->
+<body>
+    <h1>Regional Near Miss Dashboard</h1>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Data Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About the Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/defs">Helpful Definitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        <h4>Helpful Definitions</h4>
+        <br>
+        <h4>
+            The National Safety Council defines a Near Miss as an unplanned event that does not result in injury or death, but could have.
+            For this reporting tool, PlanRVA recognizes that many collisions go unreported to police. This reporting tool aims to capture any event not formally reported. 
+            Near misses and collisions are differentiated in the reporting form. 
+            <br>
+            <br>
+            Reporting an unsafe condition or location is highly useful to other dashboard users and to PlanRVA staff. 
+            Unsafe conditions are structural or environmental conditions that are likely to cause a crash.
+            Some examples of unsafe conditions are: locations lacking a sidewalk or bike lane, items blocking the sidewalk or bike lane, potholes, debris in roadway, or poor visibility.
+        </h4>
+      <!--  <img src="{{url_for('static', filename='examples1.png') }}" alt="Examples">-->
+<!-- footer -->
+<div class="footer">
+    <br>
+    <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
+    <h2>PlanRVA is where the region comes together to look ahead.</h2>
+    <br>
+    <p>Made by Elizabeth Greenwell for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
+</div>
+</body>
+</html>

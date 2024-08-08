@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- style settings -->
+    <meta name="description" content="Map your transportation incidents and hazards.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- outside css -->
+    <!-- necessary for ? -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- necessary for ? -->
+    <link href="/static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+
+
+    <!-- leafelet -->
+    <!-- necessary for map to render in right spot -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- necessary for map to render in right spot -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    <!-- necessary for icons to be left on map to click on to initiate drawing -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+
+    <!-- bootstrap -->
+    <!-- necessary for  ?-->
+    <link rel="stylesheet" href="/static/bootstrap-slider/css/bootstrap-slider.min.css">
+    <!-- necessary for bootstrap icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- necessary for modal popup -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- my css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+
+    
+    <style>
+    </style>
+    </head>
+
+
+
+<!-- begin body -->
+<body>
+    <img class="left-aligned" src="{{url_for('static', filename='nearmiss1.png') }}" alt="PlanRVA Image">
+    <h3>For the PlanRVA Region</h3>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Data Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About the Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/defs">Helpful Definitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+        <!-- begin map and initial buttons -->
+        <div id="map"></div>
+        <div id="startbutton">
+            <button type="button" id="startReportButton" class="btn btn-default btn-md">
+                <span class= "bi bi-geo-alt-fill" aria-hidden="true">
+                </span> Start a Report</button>
+        </div>
+        <!-- end map and initial buttons -->
+
+
+        <!-- begin modal form -->
+        <div class="modal fade" id="coordinateModal" tabindex="-1" role="dialog" aria-labelledby="coordinateModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <h5 class="modal-title" id="coordinateModalLabel">Submit a Near Miss Event</h5>
+                    <h5 id="coordinatesText"></h5>
+                    <form id="eventForm">
+                        <!-- first dropdown question for Event Type -->
+                        <label for="eventType">Select Report Type:</label>
+                            <select id="eventType" name="eventType" required>
+                                <option value selected>---------</option>
+                                <option value="Near Miss">Near Miss</option>
+                                <option value="Dangerous Location">Dangerous Location</option>
+                                <option value="Collision">Collision</option>
+                            </select>
+                            <br>
+                        <!-- second dropdown question specific event -->
+                        <label for="eventType2">Select Event That Occured:</label>
+                            <select id="eventType2" name="eventType2" required>
+                                <option value selected>---------</option>
+                                <option value="Collision1">Collision with Stationary Object or Vehicle</option>
+                                <option value="Collision2">Collision with Moving Object or Vehicle</option>
+                                <option value="Miss1">Near Miss with Stationary Object or Vehicle</option>
+                                <option value="Miss2">Near Miss with Moving Object or Vehicle</option>
+                                <option value="Unsafe">Unsafe Condition or Location</option>
+                            </select>
+                            <br>
+                         <!-- third dropdown question transportation type -->
+                         <label for="travel_type">At the time of the event, how were you traveling?</label>
+                            <select id="travel_type" name="travel_type" required>
+                                <option value selected>---------</option>
+                                <option value="Walking/Rolling">Walking/Wheelchair</option>
+                                <option value="Bicycle">Bicycle/E-Bike</option>
+                                <option value="Driving">Driving</option>
+                                <option value="Scooter">Scooter</option>
+                                <option value="Moped">Motorcycle/Moped</option>
+                                <option value="Witness">Witnessed Event</option>
+                            </select>
+                            <br>
+                         <!-- fourth dropdown question transportation type -->
+                         <label for="injury_type">Were you injured?</label>
+                            <select id="injury_type" name="injury_type" required>
+                                    <option value selected>---------</option>
+                                    <option value="No Inury">No Injury</option>
+                                    <option value="Medical Treatment Not Reguired">Yes, Medical Treatment Not Required</option>
+                                    <option value="Medical Treament Required">Yes, Medical Treatment Required</option>
+                                    <option value="Witness">No, Witnessed Event</option>
+                            </select>
+                            <br>
+                        <!-- select all for exhibited behaviors options -->
+                        <label>Were any unsafe behaviors exhibited? Select all that apply.</label></toggle><br>
+                            <!--<select id="behavior" name="behavior" multi=True required>-->
+                                <input type="checkbox" name="bhrs1" id="bhrs1" value="bhrs1">Car approaching or passing too closely</input>
+                                <input type="checkbox" name="bhrs2" id="bhrs2" value="bhrs2">Car catching yellow light</input>
+                                <input type="checkbox" name="bhrs3" id="bhrs3" value="bhrs3">Car making improper right on red</input>
+                                <input type="checkbox" name="bhrs4" id="bhrs4" value="bhrs4">Car failing to yield to pedestrian or cyclist</input>
+                                <input type="checkbox" name="bhrs5" id="bhrs5" value="bhrs5">Car opening door into bike lane</input>
+                                <input type="checkbox" name="bhrs6" id="bhrs6" value="bhrs6">Cyclist jumping the curb or riding on sidewalk</input>
+                                <input type="checkbox" name="bhrs7" id="bhrs7" value="bhrs7">Pedestrian crossing without signal</input>
+                                <input type="checkbox" name="bhrs8" id="bhrs8" value="bhrs8">Pedestrian crossing midblock or walking outside sidewalk</input>
+                            </select>
+                            <br>
+                        <!-- select all for unsafe conditions or dangerous location options -->
+                         <label>Were there any unsafe conditions? Select all that apply.</label><br>
+                            <!--<select id="location" name="location" multi=True required>-->
+                                <input type="checkbox" name="loc1" id="loc1" value="loc1">No Crosswalk</input>
+                                <input type="checkbox" name="loc2" id="loc2" value="loc2">No Sidewalk</input>
+                                <input type="checkbox" name="loc3" id="loc3" value="loc3">No Stop Signs</input>
+                                <input type="checkbox" name="loc4" id="loc4" value="loc4">Broken Signals or Signs</input>
+                                <input type="checkbox" name="loc5" id="loc5" value="loc5">Not enough time for pedestrians to cross the street</input>
+                                <input type="checkbox" name="loc6" id="loc6" value="loc6">Poor Visibility - item blocking signs or signals</input>
+                                <input type="checkbox" name="loc7" id="loc7" value="loc7">Poor Visibliity - poor sightlines</input>
+                                <input type="checkbox" name="loc8" id="loc8" value="loc8">Potholes</input>
+                                <input type="checkbox" name="loc9" id="loc9" value="loc9">Loose gravel or standing water</input>
+                                <input type="checkbox" name="loc10" id="loc10" value="loc10">Road grade or grade of side slopes</input>
+                                <input type="checkbox" name="loc11" id="loc11" value="loc11">Item/debris blocking sidewalk or crosswalk</input>
+                                <input type="checkbox" name="loc12" id="loc12" value="loc12">Item/debris blocking bikeway</input>
+                                <input type="checkbox" name="loc13" id="loc13" value="loc13">Item/debris blocking roadway</input>
+                            </select>
+                            <br>
+                        <!-- select all for unsafe conditions or dangerous location options -->
+                        <label for="event_datetime">Date and Time:</label>
+                        <input type="datetime-local" id="event_datetime" name="event_datetime" required>
+                        <!-- hidden lat and long -->
+                        <input type="hidden" id="latitude" name="latitude">
+                        <input type="hidden" id="longitude" name="longitude">
+                        <!-- submission or cancel buttons -->
+                        <button type="submit" class="btn btn-primary" onclick="javascript:submitForm()">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close" onclick="closeModal()">Close</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- submission success and fail messages -->
+            <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <i class="bi-check-circle-fill"></i>
+                <strong>Success!</strong> Thank you for your submission.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <div id="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <i class="bi-exclamation-octagon-fill"></i>
+                <strong>Error!</strong> Please try again.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+
+
+
+    
+    <!-- J Query -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- leaflet and leaflet plugins-->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+
+    <!-- begin map drawing and modal functions -->
+    <script>
+        // Place the map and select basemap
+        var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
+        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token=' + accessToken, {
+            maxZoom: 18,
+            tileSize: 512,
+            zoomOffset: -1,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+        }).addTo(map);
+        // Have the map example marker be a custom icon
+        var customIcon = L.divIcon({
+            html: '<i class="bi bi-geo-alt-fill"></i>',
+            className: 'custom-icon',
+            iconSize: [24, 24],
+        });
+        // Place the example marker with a popup
+        L.marker([37.54679001050363, -77.45031004048063], { icon: customIcon }).addTo(map)
+            .bindPopup('Record an event.')
+            .openPopup();
+
+        // Initialize the FeatureGroup to store editable layers
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+        // Initialize the draw control and pass it the FeatureGroup of editable layers - custom icon only
+        // toolbar to not allow "save" of map drawing
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                edit: false
+            },
+            draw: {
+                polygon: false,
+                polyline: false,
+                rectangle: false,
+                circle: false,
+                circlemarker: false,
+                marker: {
+                    icon: customIcon
+                }
+            }
+        });
+
+        // toolbar to not allow "save" of map drawing
+        L.EditToolbar.Delete.include({
+            enable: function () {
+                this.options.featureGroup.clearLayers()
+            }
+        })
+
+         // Add draw control to map but disable drawing initially
+         map.addControl(drawControl);
+
+        // Function to start drawing mode
+        function startDrawing() {
+            // Remove existing markers
+            map.eachLayer(function(layer) {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+            // Enable the marker drawing tool
+            drawControl._toolbars.draw._modes.marker.handler.enable();
+        }
+
+        // functions to initiate drawing
+        document.getElementById('startReportButton').onclick = function () {
+            startDrawing(); 
+            document.getElementById('startReportButton').style.display = 'inline';
+            document.getElementById('map').classList.add('custom-icon-cursor');
+        };
+
+
+        // functions to draw on map and pull coordinates
+        map.on(L.Draw.Event.CREATED, function (event) {
+            // Clear previous drawings
+            drawnItems.clearLayers()
+            var layer = event.layer;
+            drawnItems.addLayer(layer);
+            var latLng = layer.getLatLng();
+            console.log('Latitude:', latLng.lat);
+            console.log('Longitude:', latLng.lng);
+            document.getElementById('latitude').value = latLng.lat;
+            document.getElementById('longitude').value = latLng.lng;
+            document.getElementById('coordinatesText').innerText = 'Coordinates: ' + latLng.lat + ', ' + latLng.lng;
+            $('#coordinateModal').modal('show'); // leave this, do not change to "openModal();"
+            map.getContainer().classList.remove('custom-icon-cursor');
+        });
+
+        // functions to open and close the modal
+        function openModal () {
+            document.getElementById('coordinateModal').classList.add('closed'); // leave add here I'm not sure why but this is what works, do not change to "remove"
+            document.getElementById('coordinateModal').style.display= 'flex';
+        }
+        function closeModal() {
+        document.getElementById('coordinateModal').classList.add('closed');
+        document.getElementById('coordinateModal').style.display = 'none';
+        }
+
+
+        // function to shape the data for the geojson and submit the form
+        function submitForm() {
+            const form = document.getElementById('eventForm');
+            const eventType = form.elements['eventType'].value;
+            const eventType2 = form.elements['eventType2'].value;
+            const travel_type = form.elements['travel_type'].value;
+            const injury_type = form.elements['injury_type'].value;
+            const bhrs1 = document.getElementById('bhrs1').checked ? 1 : 0;
+            const bhrs2 = document.getElementById('bhrs2').checked ? 1 : 0;
+            const bhrs3= document.getElementById('bhrs3').checked ? 1 : 0;
+            const bhrs4 = document.getElementById('bhrs4').checked ? 1 : 0;
+            const bhrs5 = document.getElementById('bhrs5').checked ? 1 : 0;
+            const bhrs6 = document.getElementById('bhrs6').checked ? 1 : 0;
+            const bhrs7 = document.getElementById('bhrs7').checked ? 1 : 0;
+            const bhrs8 = document.getElementById('bhrs8').checked ? 1 : 0;
+            const loc1 = document.getElementById('loc1').checked ? 1 : 0;
+            const loc2 = document.getElementById('loc2').checked ? 1 : 0;
+            const loc3 = document.getElementById('loc3').checked ? 1 : 0;
+            const loc4 = document.getElementById('loc4').checked ? 1 : 0;
+            const loc5 = document.getElementById('loc5').checked ? 1 : 0;
+            const loc6 = document.getElementById('loc6').checked ? 1 : 0;
+            const loc7 = document.getElementById('loc7').checked ? 1 : 0;
+            const loc8 = document.getElementById('loc8').checked ? 1 : 0;
+            const loc9 = document.getElementById('loc9').checked ? 1 : 0;
+            const loc10 = document.getElementById('loc10').checked ? 1 : 0;
+            const loc11 = document.getElementById('loc11').checked ? 1 : 0;
+            const loc12 = document.getElementById('loc12').checked ? 1 : 0;
+            const loc13 = document.getElementById('loc13').checked ? 1 : 0;
+            const datetime = form.elements['event_datetime'].value;
+            const latitude = parseFloat(form.elements['latitude'].value);
+            const longitude = parseFloat(form.elements['longitude'].value);
+            const data = {
+                type: "Feature",
+                geometry: {
+                    type: "Point",
+                    coordinates: [longitude, latitude] // Longitude comes first in GeoJSON format
+                },
+                properties: {
+                    report_type: eventType,
+                    event_type: eventType2,
+                    travel_type: travel_type,
+                    injury_type: injury_type,
+                    bhrs1: bhrs1,
+                    bhrs2: bhrs2,
+                    bhrs3: bhrs3,
+                    bhrs4: bhrs4,
+                    bhrs5: bhrs5,
+                    bhrs6: bhrs6,
+                    bhrs7: bhrs7,
+                    bhrs8: bhrs8,
+                    loc1: loc1,
+                    loc2: loc2,
+                    loc3: loc3,
+                    loc4: loc4,
+                    loc5: loc5,
+                    loc6: loc6,
+                    loc7: loc7,
+                    loc8: loc8,
+                    loc9: loc9,
+                    loc10: loc10,
+                    loc11: loc11,
+                    loc12: loc12,
+                    loc13: loc13,
+                    datetime: datetime
+                }
+            };
+            fetch('/add_event', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+                // Optionally reload the map or update the map with the new feature
+                closeModal();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+
+
+    </script>
+    <!-- end map drawing functions -->
+     
+
+
+
+
+
+
+    <!-- footer -->
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <br>
+        <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
+        <h2>PlanRVA is where the region comes together to look ahead.</h2>
+        <br>
+        <p>Made by Elizabeth Greenwell for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
+    </div>
+</body>
+</html>

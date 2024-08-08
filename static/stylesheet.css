@@ -1,0 +1,361 @@
+/* map size */
+#map {
+    height: 600px;
+    width: 100%;
+}
+/* consistent font */
+body, .navbar, .navbar-brand, .nav-link, button {
+    font-family: 'Montserrat', sans-serif;
+}
+/* marker intended for all events on map */
+.custom-icon {
+    font-size: 24px;
+    color: #C84107;
+    opacity: 0.5;
+}
+.custom-marker {
+    font-size: 24px;
+    color: #C84107;
+    opacity: 0.5;
+}
+.custom-icon-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewport="0 0 24 24" style="font-size:24px;color:#C84107;opacity:0.5;"><text x="0" y="24">&#xe9a4;</text></svg>'), auto;
+}
+/* unsure what these are for */
+.step {display: none; }
+.step.active {display: block;}
+
+
+
+
+
+
+
+
+/* navbar width */
+body .navbar {
+    width: 100% !important;
+    background-color: #ffffff !important;
+}
+.navbar {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 10px;
+
+}
+/* style for navbar */
+ul {
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0;
+    overflow: hidden;
+}
+li {
+    float: left !important;
+}
+li a {
+    display: block;
+    color: #D0C126 !important;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    align-items: center !important;  /* Ensure vertical alignment */
+} 
+/* Change the navbar link color to #111 (black) on hover */
+li a:hover {
+    text-decoration: underline !important;
+}
+/* for overriding external stylesheets */
+.navbar .nav-item {
+    display: block;
+    color: #D0C126 !important;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for modal */
+.coordinateModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1; /* Sit on top */
+    overflow: auto !important; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5);
+}
+.coordinateModal .modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80% !important;
+    margin: 15% auto; /* 15% from the top and centered */
+    max-width: 800px !important; /* Optional: Max width */
+}
+.button-close {
+    background: #dddddd;
+    font-size: 1.5rem;
+    cursor: pointer
+}
+.closed {
+  display: none;
+}
+
+
+
+
+
+
+
+/* stylize initial buttons - start report, cancel, ... */ 
+.btn-container {
+    margin: 10px;
+}
+.btn {
+    margin: 5px;
+}
+.btn-default {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #FFFFFF;
+    color: #D0C126;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    font-size: 35px;
+    cursor: pointer;
+}
+.btn-default:hover {
+    background-color: #D0C126;
+    color: #FFFFFF;
+}
+button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #FFFFFF;
+    color: #D0C126;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    font-size: 40px;
+    cursor: pointer;
+    position: center;
+}
+button:hover {
+    background-color: #D0C126;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+/* stylize all fonts and backgrounds */
+/* body font settings */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    margin: 2;
+    padding: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+   /* stylize all h1 text */
+h1 {
+    width: 100%;
+    text-align: center;
+    color: #08BEB8;
+    font-size: 40px;
+    position: relative;
+    margin: 20px 20px 0 0;
+}
+   /* stylize all h2 text */
+h2 {
+    text-align: center;
+    color: #FFFFFF; 
+    font-size: 30px;
+    font-style: normal;
+    position: relative
+}
+   /* stylize all paragraph text */
+p {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+    position:relative
+}
+h3 {
+    color: #08BEB8;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+    position:relative
+}
+h4 {
+    color: #525252;
+    font-size: 20px;
+    font-style: normal;
+    text-align: left;
+    position:relative
+}
+h5 {
+    color: #525252;
+    font-size: 15px;
+    font-style: normal;
+    text-align: left;
+    position:relative
+}
+.padded-text {
+    padding: 10px; /* Adds padding around the text */
+}
+ul.padded-list {
+    list-style-type: none; /* Removes the default bullet points */
+    padding: 0; /* Removes default padding */
+    background-color: #FFFFFF;
+}
+ul.padded-list li {
+    padding: 10px 0; /* Adds padding around each list item */
+    background-color: #FFFFFF;
+}
+a {
+    text-decoration: none; /* Removes default underline */
+    color: #08BEB8; /* Link color */
+}
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for contact form */
+.container {
+    width: 800px;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    margin-bottom: .5em;
+    color: #333333;
+    display: block;
+}
+input, textarea {
+    padding: .5em;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+input[type="submit"] {
+    background-color: white; 
+    color: #08BEB8;
+    border: 1px solid #08BEB8;
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Get the element to fit its content */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Some margin */
+    cursor: pointer; /* Pointer/hand icon on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition-duration: 0.4s; /* Animation duration */
+}
+input[type="submit"]:hover {
+    background-color: #08BEB8;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+
+
+/* Style for search results */
+.search-results {
+    list-style-type: none;
+    padding: 0;
+    font-size: 20px;
+    font-style: normal;
+}
+.search-results ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 20px;
+    font-style: normal;
+}
+.search-results li {
+    margin-bottom: 10px;
+    border: 1px solid #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-style: normal;
+}
+/* Style for no results message */
+.search-results p {
+    font-style: italic;
+    color: #525252;
+    font-size: 20px;
+    font-style: normal;
+}
+.search-button {
+    background-color: #FFFFFF;
+    color: #08BEB8;
+    padding: 10px 10px;
+    text-align: center;
+    border-color: 8px solid #08BEB8;
+    border-radius: 8px;
+    font-size: 40px;
+}
+.search-button:hover {
+    background-color: #CFFDFC;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+/* Design the Footer */
+.footer {
+    background-color: #C84107;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100% !important;
+    bottom: 0 !important;
+}
