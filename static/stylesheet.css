@@ -56,7 +56,7 @@ li {
 }
 li a {
     display: block;
-    color: #D0C126 !important;
+    color: #7D68AE !important;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -69,7 +69,7 @@ li a:hover {
 /* for overriding external stylesheets */
 .navbar .nav-item {
     display: block;
-    color: #D0C126 !important;
+    color: #7D68AE !important;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -133,7 +133,7 @@ li a:hover {
     display: inline-block;
     padding: 10px 10px;
     background-color: #FFFFFF;
-    color: #D0C126;
+    color: #7D68AE;
     text-align: center;
     border: none;
     border-radius: 12px;
@@ -141,14 +141,14 @@ li a:hover {
     cursor: pointer;
 }
 .btn-default:hover {
-    background-color: #D0C126;
+    background-color: #7D68AE;
     color: #FFFFFF;
 }
 button {
     display: inline-block;
     padding: 10px 10px;
     background-color: #FFFFFF;
-    color: #D0C126;
+    color: #7D68AE;
     text-align: center;
     border: none;
     border-radius: 12px;
@@ -157,7 +157,7 @@ button {
     position: center;
 }
 button:hover {
-    background-color: #D0C126;
+    background-color: #7D68AE;
     color: #FFFFFF;
 }
 
@@ -352,7 +352,7 @@ input[type="submit"]:hover {
 
 /* Design the Footer */
 .footer {
-    background-color: #C84107;
+    background-color: #7D68AE;
     text-align: center;
     padding: 10px;
     position: relative;

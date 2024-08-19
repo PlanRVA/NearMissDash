@@ -46,32 +46,32 @@
 <body>
     <img class="left-aligned" src="{{url_for('static', filename='nearmiss1.png') }}" alt="PlanRVA Image">
     <h3>For the PlanRVA Region</h3>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Data Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About the Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/defs">Helpful Definitions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Data Requests</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About the Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/defs">Helpful Definitions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
 
 
 
@@ -226,10 +226,25 @@
             className: 'custom-icon',
             iconSize: [24, 24],
         });
+
         // Place the example marker with a popup
         L.marker([37.54679001050363, -77.45031004048063], { icon: customIcon }).addTo(map)
             .bindPopup('Record an event.')
             .openPopup();
+
+
+        // Add the Locate control with a custom icon
+        L.control.locate({
+            position: 'topleft',
+            icon: 'bi bi-pin-map',  // Use your desired icon class here
+            iconLoading: 'bi bi-pin-map',  // Optional: icon while locating
+            flyTo: true,  // Fly to the location
+            showPopup: false,  // Don't show the popup automatically
+            locateOptions: {
+                maxZoom: 16,
+                enableHighAccuracy: true
+            }
+        }).addTo(map);
 
         // Initialize the FeatureGroup to store editable layers
         var drawnItems = new L.FeatureGroup();
