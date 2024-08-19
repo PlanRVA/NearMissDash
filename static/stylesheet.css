@@ -186,7 +186,7 @@ body {
 h1 {
     width: 100%;
     text-align: center;
-    color: #08BEB8;
+    color: #002D74;
     font-size: 40px;
     position: relative;
     margin: 20px 20px 0 0;
@@ -208,7 +208,7 @@ p {
     position:relative
 }
 h3 {
-    color: #08BEB8;
+    color: #002D74;
     font-size: 20px;
     font-style: normal;
     text-align: center;
@@ -242,7 +242,7 @@ ul.padded-list li {
 }
 a {
     text-decoration: none; /* Removes default underline */
-    color: #08BEB8; /* Link color */
+    color: #002D74; /* Link color */
 }
 a:hover {
     text-decoration: underline; /* Underline on hover */
@@ -281,8 +281,8 @@ input, textarea {
 }
 input[type="submit"] {
     background-color: white; 
-    color: #08BEB8;
-    border: 1px solid #08BEB8;
+    color: #002D74;
+    border: 1px solid #002D74;
     padding: 10px 20px; /* Some padding */
     text-align: center; /* Centered text */
     text-decoration: none; /* No underline */
@@ -294,7 +294,7 @@ input[type="submit"] {
     transition-duration: 0.4s; /* Animation duration */
 }
 input[type="submit"]:hover {
-    background-color: #08BEB8;
+    background-color: #002D74;
     color: white;
     border: 1px solid white;
 }
@@ -333,10 +333,10 @@ input[type="submit"]:hover {
 }
 .search-button {
     background-color: #FFFFFF;
-    color: #08BEB8;
+    color: #002D74;
     padding: 10px 10px;
     text-align: center;
-    border-color: 8px solid #08BEB8;
+    border-color: 8px solid #002D74;
     border-radius: 8px;
     font-size: 40px;
 }

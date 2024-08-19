@@ -207,7 +207,7 @@
     <!-- leaflet and leaflet plugins-->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.78.0/L.Control.Locate.min.js"></script>
 
     <!-- begin map drawing and modal functions -->
     <script>
@@ -231,18 +231,18 @@
         L.marker([37.54679001050363, -77.45031004048063], { icon: customIcon }).addTo(map)
             .bindPopup('Record an event.')
             .openPopup();
-
+            
 
         // Add the Locate control with a custom icon
-        L.control.locate({
-            position: 'topleft',
-            icon: 'bi bi-pin-map',  // Use your desired icon class here
-            iconLoading: 'bi bi-pin-map',  // Optional: icon while locating
-            flyTo: true,  // Fly to the location
-            showPopup: false,  // Don't show the popup automatically
-            locateOptions: {
-                maxZoom: 16,
-                enableHighAccuracy: true
+            L.control.locate({
+                position: 'topleft',
+                icon: 'bi bi-pin-map',  // Use your desired icon class here
+                iconLoading: 'bi bi-pin-map',  // Optional: icon while locating
+                flyTo: true,  // Fly to the location
+                showPopup: false,  // Don't show the popup automatically
+                locateOptions: {
+                    maxZoom: 16,
+                    enableHighAccuracy: true
             }
         }).addTo(map);
 
