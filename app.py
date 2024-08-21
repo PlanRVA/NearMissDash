@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify, Response
+#import packages
+from flask import Flask, render_template, request, jsonify
 import folium
 from IPython.display import HTML, display
 import json
@@ -11,6 +12,7 @@ import io
 import smtplib
 from email.mime.text import MIMEText
 from waitress import serve
+import requests
 
 #from your_database_module import search_function
 
@@ -51,7 +53,7 @@ def dashboard():
 #tell flask how to open 'Events' JSONBin
 @app.route('/get-bin', methods=['GET'])
 def get_bin():
-        headers = {
+    headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
     response = requests.get(JSONBIN_API_URL, headers=headers)
