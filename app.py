@@ -18,6 +18,10 @@ from waitress import serve
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'greenstreets'
 
+#setup JSONBin.io 
+JSONBIN_API_URL = 'https://api.jsonbin.io/v3/b/66c62ec8ad19ca34f8991e19'
+JSONBIN_ACCESS_KEY = '$2a$10$B0rnHrZiaswLGmon7BTCveoCdWMb/TaIWMYJ/Bwch3Ym/agGopUv2'
+
 #tell flask to read home page
 @app.route('/')
 def index(): 
@@ -44,26 +48,33 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-#tell flask how to open events geojson
-@app.route('/geojson')
-def geojson():
-    with open('json/events.geojson') as f:
-        geojson_data = json.load(f)
-    return jsonify(geojson_data)
+#tell flask how to open 'Events' JSONBin
+@app.route('/get-bin', methods=['GET'])
+def get_bin():
+        headers = {
+        'X-Master-Key': JSONBIN_ACCESS_KEY,
+    }
+    response = requests.get(JSONBIN_API_URL, headers=headers)
 
-#tell flask to submit and save form to geojson
-@app.route('/add_event', methods=['POST'])
-def add_event():
-    new_event = request.json
-    # Load existing GeoJSON data
-    with open('json/events.geojson') as f:
-        geojson_data = json.load(f)
-    # Add the new event to the features list
-    geojson_data['features'].append(new_event)
-    # Save the updated GeoJSON data
-    with open('json/events.geojson', 'w') as f:
-        json.dump(geojson_data, f, indent=4)
-    return jsonify({'status': 'success'}), 200
+    if response.status_code == 200:
+        return jsonify(response.json()), 200
+    else:
+        return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
+
+#tell flask to submit and save form to 'Events' JSONBin
+@app.route('/update-bin', methods=['POST'])
+def update_bin():
+    data = request.json  # Get the JSON data from the request
+    headers = {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_ACCESS_KEY,
+    }
+    response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
+
+    if response.status_code == 200:
+        return jsonify(response.json()), 200
+    else:
+        return jsonify({'error': 'Failed to update data in JSONBin.io'}), response.status_code
 
 
 #tell flask how to submit contact form
