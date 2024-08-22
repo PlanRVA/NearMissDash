@@ -180,20 +180,31 @@
                 </div>
             </div>
 
-            <!-- submission success and fail messages -->
-            <div id="successMessage" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <i class="bi-check-circle-fill"></i>
-                <strong>Success!</strong> Thank you for your submission.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-            <div id="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert" style="display:none;">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <i class="bi-exclamation-octagon-fill"></i>
-                <strong>Error!</strong> Please try again.
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        </div>
+            <!-- submission success and fail modals -->
+            <div id="success_modal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <a class="close" href="#" data-dismiss="modal">&times;
+                        </a>
+                        <div class="page-body">
+                            <div class="head">
+                                <h3 style="margin-top: 5px;">Thank your for your submission!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fail_modal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <a class="close" href="#" data-dismiss="modal">&times;
+                            </a>
+                            <div class="page-body">
+                                <div class="head">
+                                    <h3 style="margin-top: 5px;">Submission error, please try again.</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -407,21 +418,22 @@
             .then(result => {
                 console.log('Success:', result);
                 // Optionally update the map with the new feature
-                showPopup('Thank you for your submission!');  // Popup success message
+                    // Show the success modal
+                const successModal = document.querySelector('.success_modal');
+                if (successModal) {
+                    successModal.classList.add('show');
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
-                showPopup('Failed to add event. Please try again.');  // Popup error message
+                // Show the failure modal
+                const failModal = document.querySelector('.fail_modal');
+                if (failModal) {
+                    failModal.classList.add('show');
+                }
             });
         }
-        //Success and error popup modals 
-        function showPopup(message) {
-            document.getElementById('popupMessage').textContent = message;
-            document.getElementById('popupModal').style.display = 'block';
-        }
-        function closePopup() {
-            document.getElementById('popupModal').style.display = 'none';
-        }
+
 
 
 
