@@ -110,10 +110,6 @@
         <br>
         <img src="{{url_for('static', filename='bike.png') }}" alt=""PlanRVA Image"> 
         <br>
-        <h4>Report Types Distribution</h4>
-        <div class="chart-container" style="position: relative; height:40vh; width:80vw"></div>
-            <canvas id="myChart"></canvas>
-        </div>
         <br>
         <br>
         <!-- Bootstrap --><!-- Bootstrap -->
@@ -159,19 +155,30 @@
             }
         function onEachFeature(feature, layer) {
             if (feature.properties && feature.properties.report_type) {
-                layer.bindPopup('Event: ' + feature.properties.report_type + '<br>Date: ' + feature.properties.datetime);
+                let popupContent = `
+                    <div class="popup-content">
+                        <h3>${feature.properties.report_type}</h3>
+                        <p><strong>Date:</strong> ${feature.properties.datetime || 'N/A'}</p>
+                        <p><strong>Description:</strong> ${feature.properties.description || 'No description available.'}</p>
+                    </div>
+                    `;
+                layer.bindPopup(popupContent);
+                }
             }
-        }
-        // Fetch GeoJSON data from Flask app
+        // Fetch GeoJSON data from Flask app, give popup marker and icon
         fetch('/get-map-data')
             .then(response => response.json())
             .then(data => {
                 // Add GeoJSON data to the map
-                L.geoJSON(data.record).addTo(map);
-            })
-            .catch(error => {
-                console.error('Error fetching map data:', error);
-            });
+                L.geoJSON(geojsonData, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, { icon: getIcon(feature.properties.report_type) });
+                    },
+                onEachFeature: onEachFeature
+            }).addTo(map);
+        
+        });
+        
          </script>
     <!-- footer -->
     <div class="footer">
