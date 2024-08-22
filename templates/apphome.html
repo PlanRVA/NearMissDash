@@ -419,7 +419,7 @@
                 console.log('Success:', result);
                 // Optionally update the map with the new feature
                     // Show the success modal
-                const successModal = document.querySelector('.success_modal');
+                const successModal = document.querySelector('success_modal');
                 if (successModal) {
                     successModal.classList.add('show');
                 }
@@ -427,7 +427,7 @@
             .catch(error => {
                 console.error('Error:', error);
                 // Show the failure modal
-                const failModal = document.querySelector('.fail_modal');
+                const failModal = document.querySelector('fail_modal');
                 if (failModal) {
                     failModal.classList.add('show');
                 }
