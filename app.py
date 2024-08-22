@@ -50,9 +50,11 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-#tell flask how to open 'Events' JSONBin
-@app.route('/get-bin', methods=['GET'])
-def get_bin():
+#tell flask how to add event to JSONBin
+
+#tell flask how to show map from JSONBin data
+@app.route('/get-map-data', methods=['GET'])
+def get_map_data():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
@@ -63,20 +65,7 @@ def get_bin():
     else:
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
 
-#tell flask to submit and save form to 'Events' JSONBin
-@app.route('/update-bin', methods=['POST'])
-def update_bin():
-    data = request.json  # Get the JSON data from the request
-    headers = {
-        'Content-Type': 'application/json',
-        'X-Master-Key': JSONBIN_ACCESS_KEY,
-    }
-    response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
 
-    if response.status_code == 200:
-        return jsonify(response.json()), 200
-    else:
-        return jsonify({'error': 'Failed to update data in JSONBin.io'}), response.status_code
 
 
 #tell flask how to submit contact form
