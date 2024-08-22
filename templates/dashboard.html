@@ -5,14 +5,11 @@
     <!-- style settings -->
     <meta name="description" content="Map your transportation incidents and hazards.">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <!-- my css -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- leafelet -->
     <!-- necessary for map to render in right spot -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -23,10 +20,8 @@
     <link rel="stylesheet" href="/static/bootstrap-slider/css/bootstrap-slider.min.css">
     <!-- necessary for bootstrap icons  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
     <!-- my css -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
-    
     <style>
         body, .navbar, .navbar-brand, .nav-link, button {
             font-family: 'Montserrat', sans-serif;
@@ -81,11 +76,11 @@
         .step.active {display: block;}
     </style>
 </head>
-
 <!-- begin body -->
 <body>
-    <h1>Regional Near Miss Dashboard</h1>
+    <h1>Richmond Regional Near Miss Dashboard</h1>
     <body>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
@@ -110,10 +105,7 @@
                 </ul>
             </div>
         </nav>
-
-        
-
-     
+        <!-- map -->
         <div id="map"></div>
         <br>
         <img src="{{url_for('static', filename='bike.png') }}" alt=""PlanRVA Image"> 
@@ -124,9 +116,6 @@
         </div>
         <br>
         <br>
-
-
-
         <!-- Bootstrap --><!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <!-- leaflet and leaflet plugins-->
@@ -134,7 +123,7 @@
         <!-- Popper -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <script>
-            // Have the map
+            // Have the map, setup the custom base map
             var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
             var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
 
@@ -146,33 +135,44 @@
             attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>'
         }).addTo(map);
 
-            var customIcons = {
-            "Collision": L.divIcon({ html: '<i class="bi bi-geo-alt-fill icon-red"></i>', className: 'custom-icon', iconSize: [24, 24] }),
-            "Near Miss": L.divIcon({ html: '<i class="bi bi-geo-alt-fill icon-orange"></i>', className: 'custom-icon', iconSize: [24, 24] }),
-            "Dangerous Location": L.divIcon({ html: '<i class="bi bi-geo-alt-fill icon-yellow"></i>', className: 'custom-icon', iconSize: [24, 24] })
+        // define custom icons based on report type, custom icons class name from CSS
+        var customIcons = {
+            "Collision": L.divIcon({ 
+                html: '<i class="bi bi-geo-alt-fill icon-red"></i>', 
+                className: 'custom-icon', 
+                iconSize: [24, 24] 
+            }),
+            "Near Miss": L.divIcon({ 
+                 html: '<i class="bi bi-geo-alt-fill icon-orange"></i>', 
+                className: 'custom-icon', 
+                 iconSize: [24, 24] 
+            }),
+            "Dangerous Location": L.divIcon({ 
+                html: '<i class="bi bi-geo-alt-fill icon-yellow"></i>', 
+                className: 'custom-icon', 
+                 iconSize: [24, 24] 
+            })
         };
-
-            function onEachFeature(feature, layer) {
-                if (feature.properties && feature.properties.report_type) {
-                    layer.bindPopup('Event: ' + feature.properties.report_type + '<br>Date: ' + feature.properties.datetime);
-                }
+        // define function to get reportTypes and apply custom icons
+        function getIcon(reportType) {
+            return customIcons[reportType] || customIcons['Dangerous Location'];  // Default to 'Dangerous Location' if no match
             }
-
-            // Fetch GeoJSON data from Flask app
-            fetch('/get-map-data')
-                .then(response => response.json())
-                .then(data => {
-                    // Add GeoJSON data to the map
-                    L.geoJSON(data.record).addTo(map);
-                })
-                .catch(error => {
-                    console.error('Error fetching map data:', error);
-                });
-
-
-            </script>
-    
-            
+        function onEachFeature(feature, layer) {
+            if (feature.properties && feature.properties.report_type) {
+                layer.bindPopup('Event: ' + feature.properties.report_type + '<br>Date: ' + feature.properties.datetime);
+            }
+        }
+        // Fetch GeoJSON data from Flask app
+        fetch('/get-map-data')
+            .then(response => response.json())
+            .then(data => {
+                // Add GeoJSON data to the map
+                L.geoJSON(data.record).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error fetching map data:', error);
+            });
+         </script>
     <!-- footer -->
     <div class="footer">
         <br>
