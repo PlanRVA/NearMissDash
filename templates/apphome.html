@@ -91,9 +91,10 @@
         <div class="modal fade" id="coordinateModal" tabindex="-1" role="dialog" aria-labelledby="coordinateModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <h5 class="modal-title" id="coordinateModalLabel">Submit a Near Miss Event</h5>
+                    <h4 class="modal-title" id="coordinateModalLabel">Submit a Near Miss Event</h4>
                     <h5 id="coordinatesText"></h5>
-                    <form id="eventForm">
+                    <br>
+                    <form id="eventForm" class="form-control">
                         <!-- first dropdown question for Event Type -->
                         <label for="eventType">Select Report Type:</label>
                             <select id="eventType" name="eventType" required>
@@ -102,7 +103,7 @@
                                 <option value="Dangerous Location">Dangerous Location</option>
                                 <option value="Collision">Collision</option>
                             </select>
-                            <br>
+                        <br>
                         <!-- second dropdown question specific event -->
                         <label for="eventType2">Select Event That Occured:</label>
                             <select id="eventType2" name="eventType2" required>
@@ -113,7 +114,7 @@
                                 <option value="Miss2">Near Miss with Moving Object or Vehicle</option>
                                 <option value="Unsafe">Unsafe Condition or Location</option>
                             </select>
-                            <br>
+                        <br>
                          <!-- third dropdown question transportation type -->
                          <label for="travel_type">At the time of the event, how were you traveling?</label>
                             <select id="travel_type" name="travel_type" required>
@@ -125,7 +126,7 @@
                                 <option value="Moped">Motorcycle/Moped</option>
                                 <option value="Witness">Witnessed Event</option>
                             </select>
-                            <br>
+                        <br>
                          <!-- fourth dropdown question transportation type -->
                          <label for="injury_type">Were you injured?</label>
                             <select id="injury_type" name="injury_type" required>
@@ -135,7 +136,7 @@
                                     <option value="Medical Treament Required">Yes, Medical Treatment Required</option>
                                     <option value="Witness">No, Witnessed Event</option>
                             </select>
-                            <br>
+                        <br>
                         <!-- select all for exhibited behaviors options -->
                         <label>Were any unsafe behaviors exhibited? Select all that apply.</label></toggle><br>
                             <!--<select id="behavior" name="behavior" multi=True required>-->
@@ -148,7 +149,7 @@
                                 <input type="checkbox" name="bhrs7" id="bhrs7" value="bhrs7">Pedestrian crossing without signal</input>
                                 <input type="checkbox" name="bhrs8" id="bhrs8" value="bhrs8">Pedestrian crossing midblock or walking outside sidewalk</input>
                             </select>
-                            <br>
+                        <br>
                         <!-- select all for unsafe conditions or dangerous location options -->
                          <label>Were there any unsafe conditions? Select all that apply.</label><br>
                             <!--<select id="location" name="location" multi=True required>-->
@@ -166,7 +167,7 @@
                                 <input type="checkbox" name="loc12" id="loc12" value="loc12">Item/debris blocking bikeway</input>
                                 <input type="checkbox" name="loc13" id="loc13" value="loc13">Item/debris blocking roadway</input>
                             </select>
-                            <br>
+                        <br>
                         <!-- select all for unsafe conditions or dangerous location options -->
                         <label for="event_datetime">Date and Time:</label>
                         <input type="datetime-local" id="event_datetime" name="event_datetime" required>
@@ -179,33 +180,6 @@
                     </form>
                 </div>
             </div>
-
-
-            <!-- submission success and fail modals -->
-            <div id="successmodal" class="modal fade" role="dialog" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <a class="close" href="#" data-dismiss="modal">&times;
-                        </a>
-                        <div class="page-body">
-                            <div class="head">
-                                <h3 style="margin-top: 5px;">Thank your for your submission!</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="failmodal" class="modal fade" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <a class="close" href="#" data-dismiss="modal">&times;
-                            </a>
-                            <div class="page-body">
-                                <div class="head">
-                                    <h3 style="margin-top: 5px;">Submission error, please try again.</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
 
@@ -407,7 +381,6 @@
                     datetime: datetime
                 }
             };
-
             fetch('/add-feature', {
                 method: 'POST',
                 headers: {
@@ -418,22 +391,18 @@
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
-                // Optionally update the map with the new feature
-                    // Show the success modal
-                const successModal = document.querySelector('successmodal');
-                if (successModal) {
-                    successModal.classList.add('show');
-                }
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Show the failure modal
-                const failModal = document.querySelector('failmodal');
-                if (failModal) {
-                    failModal.classList.add('show');
-                }
             });
-        }
+
+
+
+
+
+
+            
+        };
 
 
 

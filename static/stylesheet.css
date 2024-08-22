@@ -115,62 +115,6 @@ li a:hover {
 .closed {
   display: none;
 }
-/* Style for success modal */
-.successmodal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 1; /* Sit on top */
-    overflow: auto !important; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.5);
-}
-.successmodal .modal-content {
-    background-color: #b5e092;
-    padding: 20px !important;
-    border-radius: 10px;
-    width: 80% !important;
-    margin: 15% auto; /* 15% from the top and centered */
-    max-width: 800px !important; /* Optional: Max width */
-}
-.button-close {
-    background: #dddddd;
-    font-size: 1.5rem;
-    cursor: pointer
-}
-.closed {
-  display: none;
-}
-/* Style for fail modal */
-.failmodal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 1; /* Sit on top */
-    overflow: auto !important; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.5);
-}
-.failmodal .modal-content {
-    background-color: #ffffff;
-    padding: 20px !important;
-    border-radius: 10px;
-    width: 80% !important;
-    margin: 15% auto; /* 15% from the top and centered */
-    max-width: 800px !important; /* Optional: Max width */
-}
-.button-close {
-    background: #dddddd;
-    font-size: 1.5rem;
-    cursor: pointer
-}
-.closed {
-  display: none;
-}
 
 
 
@@ -269,14 +213,21 @@ h3 {
 }
 h4 {
     color: #525252;
-    font-size: 20px;
+    font-size: 30px;
     font-style: normal;
     text-align: left;
     position:relative
 }
 h5 {
     color: #525252;
-    font-size: 15px;
+    font-size: 20px;
+    font-style: normal;
+    text-align: left;
+    position:relative
+}
+h6 {
+    color: #525252;
+    font-size: 18px;
     font-style: normal;
     text-align: left;
     position:relative
