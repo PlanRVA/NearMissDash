@@ -398,23 +398,36 @@
                     datetime: datetime
                 }
             };
-            fetch('/update-bin', {
+
+            fetch('/add-feature', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
-                // Optionally reload the map or update the map with the new feature
-                closeModal();
+                // Optionally update the map with the new feature
+                showPopup('Thank you for your submission!');  // Popup success message
             })
             .catch(error => {
                 console.error('Error:', error);
+                showPopup('Failed to add event. Please try again.');  // Popup error message
             });
         }
+        //Success and error popup modals 
+        function showPopup(message) {
+            document.getElementById('popupMessage').textContent = message;
+            document.getElementById('popupModal').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+
+
+
         
     </script>
     <!-- end map drawing functions -->

@@ -51,7 +51,30 @@ def dashboard():
 
 
 #tell flask how to add event to JSONBin
+@app.route('/add-feature', methods=['POST'])
+def add_feature():
+    new_feature = request.json  # Get the new feature from the request body
+    
+    # Fetch the current data from JSONBin
+    headers = {
+        'X-Master-Key': JSONBIN_ACCESS_KEY,
+    }
+    response = requests.get(JSONBIN_API_URL, headers=headers)
 
+    if response.status_code != 200:
+        return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
+
+    # Add the new feature to the existing data
+    data = response.json()['record']
+    data['features'].append(new_feature)
+
+    # Update the JSONBin with the new data
+    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
+
+    if update_response.status_code == 200:
+        return jsonify(update_response.json()), 200
+    else:
+        return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
 #tell flask how to show map from JSONBin data
 @app.route('/get-map-data', methods=['GET'])
 def get_map_data():
