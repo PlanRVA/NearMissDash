@@ -180,9 +180,10 @@
                 </div>
             </div>
 
+
             <!-- submission success and fail modals -->
-            <div id="success_modal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+            <div id="successmodal" class="modal fade" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <a class="close" href="#" data-dismiss="modal">&times;
                         </a>
@@ -193,8 +194,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="fail_modal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+                <div id="failmodal" class="modal fade" role="dialog">
+                    <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <a class="close" href="#" data-dismiss="modal">&times;
                             </a>
@@ -419,7 +420,7 @@
                 console.log('Success:', result);
                 // Optionally update the map with the new feature
                     // Show the success modal
-                const successModal = document.querySelector('success_modal');
+                const successModal = document.querySelector('successmodal');
                 if (successModal) {
                     successModal.classList.add('show');
                 }
@@ -427,7 +428,7 @@
             .catch(error => {
                 console.error('Error:', error);
                 // Show the failure modal
-                const failModal = document.querySelector('fail_modal');
+                const failModal = document.querySelector('failmodal');
                 if (failModal) {
                     failModal.classList.add('show');
                 }

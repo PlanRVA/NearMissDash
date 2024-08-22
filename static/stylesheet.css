@@ -116,7 +116,7 @@ li a:hover {
   display: none;
 }
 /* Style for success modal */
-.success_modal {
+.successmodal {
     display: none;
     position: fixed;
     top: 0;
@@ -127,7 +127,7 @@ li a:hover {
     overflow: auto !important; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.5);
 }
-.success_modal .modal-content {
+.successmodal .modal-content {
     background-color: #b5e092;
     padding: 20px !important;
     border-radius: 10px;
@@ -144,7 +144,7 @@ li a:hover {
   display: none;
 }
 /* Style for fail modal */
-.fail_modal {
+.failmodal {
     display: none;
     position: fixed;
     top: 0;
@@ -155,7 +155,7 @@ li a:hover {
     overflow: auto !important; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.5);
 }
-.fail_modal .modal-content {
+.failmodal .modal-content {
     background-color: #ffffff;
     padding: 20px !important;
     border-radius: 10px;
