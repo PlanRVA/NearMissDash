@@ -182,7 +182,6 @@
             </div>
 
 
-
     
     <!-- J Query -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -391,9 +390,11 @@
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
+                alert("Thank you for your submission!");
             })
             .catch(error => {
                 console.error('Error:', error);
+                alert("Submission error. Please try again.");
             });
 
 
@@ -409,7 +410,7 @@
 
         
     </script>
-    <!-- end map drawing functions -->
+    <!-- end map drawing and form functions -->
      
 
 
