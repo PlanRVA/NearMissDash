@@ -129,7 +129,13 @@ li a:hover {
     text-decoration: none;
     color:#fff;
   }
-
+.custom-form-check {
+    display: flex;
+    align-items: left !important;
+}
+.custom-form-check .form-check-input {
+    margin-right: 0.5rem !important; /* Adjust this value to control the spacing between checkbox and label */
+}
 
 
 /* stylize initial buttons - start report, cancel, ... */ 
