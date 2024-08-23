@@ -77,83 +77,145 @@
 
 
 
-        <!-- begin map and initial buttons -->
-        <div id="map"></div>
-        <div id="startbutton">
-            <button type="button" id="startReportButton" class="btn btn-default btn-md">
-                <span class= "bi bi-geo-alt-fill" aria-hidden="true">
-                </span> Start a Report</button>
-        </div>
-        <!-- end map and initial buttons -->
+    <!-- begin map and initial buttons -->
+     <div id="map"></div>
+     <div id="startbutton">
+        <button type="button" id="startReportButton" class="btn btn-default btn-md">
+            <span class= "bi bi-geo-alt-fill" aria-hidden="true">
+            </span> Start a Report</button>
+    </div>
+    <!-- end map and initial buttons -->
 
 
-        <!-- begin modal form -->
-        <div class="modal fade" id="coordinateModal" tabindex="-1" role="dialog" aria-labelledby="coordinateModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <h4 class="modal-title" id="coordinateModalLabel">Submit a Near Miss Event</h4>
-                    <h5 id="coordinatesText"></h5>
+    <!-- begin modal form -->
+    <div class="modal fade" id="coordinateModal" tabindex="-1" role="dialog" aria-labelledby="coordinateModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <h4 class="modal-title" id="coordinateModalLabel">Submit a Near Miss Event</h4>
+                <h5 id="coordinatesText"></h5>
+                <br>
+                <form id="eventForm" class="form-control">
+                    <!-- first dropdown question for Event Type -->
+                    <label for="eventType">Select Report Type:</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value selected>---------</option>
+                            <option value="Near Miss">Near Miss</option>
+                            <option value="Dangerous Location">Dangerous Location</option>
+                            <option value="Collision">Collision</option>
+                         </select>
                     <br>
-                    <form id="eventForm" class="form-control">
-                        <!-- first dropdown question for Event Type -->
-                        <label for="eventType">Select Report Type:</label>
-                            <select id="eventType" name="eventType" required>
-                                <option value selected>---------</option>
-                                <option value="Near Miss">Near Miss</option>
-                                <option value="Dangerous Location">Dangerous Location</option>
-                                <option value="Collision">Collision</option>
+                    <br>
+                    <!-- second dropdown question specific event -->
+                    <label for="eventType2">Select Event That Occured:</label>
+                        <select id="eventType2" name="eventType2" required>
+                            <option value selected>---------</option>
+                            <option value="Collision1">Collision with Stationary Object or Vehicle</option>
+                            <option value="Collision2">Collision with Moving Object or Vehicle</option>
+                            <option value="Miss1">Near Miss with Stationary Object or Vehicle</option>
+                            <option value="Miss2">Near Miss with Moving Object or Vehicle</option>
+                            <option value="Unsafe">Unsafe Condition or Location</option>
+                        </select>
+                    <br>
+                    <br>
+                    <!-- third dropdown question transportation type -->
+                    <label for="travel_type">At the time of the event, how were you traveling?</label>
+                        <select id="travel_type" name="travel_type" required>
+                            <option value selected>---------</option>
+                            <option value="Walking/Rolling">Walking/Wheelchair</option>
+                            <option value="Bicycle">Bicycle/E-Bike</option>
+                            <option value="Driving">Driving</option>
+                            <option value="Scooter">Scooter</option>
+                            <option value="Moped">Motorcycle/Moped</option>
+                            <option value="Witness">Witnessed Event</option>
+                        </select>
+                    <br>
+                    <br>
+                    <!-- fourth dropdown question transportation type -->
+                    <label for="injury_type">Were you injured?</label>
+                        <select id="injury_type" name="injury_type" required>
+                            <option value selected>---------</option>
+                            <option value="No Inury">No Injury</option>
+                            <option value="Medical Treatment Not Reguired">Yes, Medical Treatment Not Required</option>
+                            <option value="Medical Treament Required">Yes, Medical Treatment Required</option>
+                            <option value="Witness">No, Witnessed Event</option>
+                        </select>
+                    <br>
+                    <br>
+                    <div class="modal-body mt-0">
+                        <span>Were any unsafe behaviors exhibited? Select all that apply.</span>
+                            <div class="mt-3">
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs1" id="bhrs1" position="left-aligned">
+                                        <label class="form-check-label" for="bhrs1">
+                                        Car approaching or passing too closely
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs2" id="bhrs2">
+                                        <label class="form-check-label" for="bhrs2">
+                                            Car catching yellow light
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs3" id="bhrs3">
+                                        <label class="form-check-label" for="bhrs3">
+                                            Car making improper right on red
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs4" id="bhrs4">
+                                        <label class="form-check-label" for="bhrs4">
+                                            Car failing to yield to pedestrian or cyclist
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs5" id="bhrs5">
+                                        <label class="form-check-label" for="bhrs5">
+                                            Car opening door into bike lane
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs6" id="bhrs6">
+                                        <label class="form-check-label" for="bhrs6">
+                                            Cyclist jumping the curb or riding on sidewalk
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs7" id="bhrs7">
+                                        <label class="form-check-label" for="bhrs7">
+                                            Pedestrian crossing without signal
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="bhrs8" id="bhrs8">
+                                        <label class="form-check-label" for="bhrs8">
+                                            Pedestrian crossing midblock or walking outside sidewalk
+                                        </label>
+                                    </div>     
+                                </div> 
                             </select>
                         <br>
-                        <!-- second dropdown question specific event -->
-                        <label for="eventType2">Select Event That Occured:</label>
-                            <select id="eventType2" name="eventType2" required>
-                                <option value selected>---------</option>
-                                <option value="Collision1">Collision with Stationary Object or Vehicle</option>
-                                <option value="Collision2">Collision with Moving Object or Vehicle</option>
-                                <option value="Miss1">Near Miss with Stationary Object or Vehicle</option>
-                                <option value="Miss2">Near Miss with Moving Object or Vehicle</option>
-                                <option value="Unsafe">Unsafe Condition or Location</option>
-                            </select>
                         <br>
-                         <!-- third dropdown question transportation type -->
-                         <label for="travel_type">At the time of the event, how were you traveling?</label>
-                            <select id="travel_type" name="travel_type" required>
-                                <option value selected>---------</option>
-                                <option value="Walking/Rolling">Walking/Wheelchair</option>
-                                <option value="Bicycle">Bicycle/E-Bike</option>
-                                <option value="Driving">Driving</option>
-                                <option value="Scooter">Scooter</option>
-                                <option value="Moped">Motorcycle/Moped</option>
-                                <option value="Witness">Witnessed Event</option>
-                            </select>
-                        <br>
-                         <!-- fourth dropdown question transportation type -->
-                         <label for="injury_type">Were you injured?</label>
-                            <select id="injury_type" name="injury_type" required>
-                                    <option value selected>---------</option>
-                                    <option value="No Inury">No Injury</option>
-                                    <option value="Medical Treatment Not Reguired">Yes, Medical Treatment Not Required</option>
-                                    <option value="Medical Treament Required">Yes, Medical Treatment Required</option>
-                                    <option value="Witness">No, Witnessed Event</option>
-                            </select>
-                        <br>
-                        <!-- select all for exhibited behaviors options -->
-                        <label>Were any unsafe behaviors exhibited? Select all that apply.</label></toggle><br>
-                            <!--<select id="behavior" name="behavior" multi=True required>-->
-                                <input type="checkbox" name="bhrs1" id="bhrs1" value="bhrs1">Car approaching or passing too closely</input>
-                                <input type="checkbox" name="bhrs2" id="bhrs2" value="bhrs2">Car catching yellow light</input>
-                                <input type="checkbox" name="bhrs3" id="bhrs3" value="bhrs3">Car making improper right on red</input>
-                                <input type="checkbox" name="bhrs4" id="bhrs4" value="bhrs4">Car failing to yield to pedestrian or cyclist</input>
-                                <input type="checkbox" name="bhrs5" id="bhrs5" value="bhrs5">Car opening door into bike lane</input>
-                                <input type="checkbox" name="bhrs6" id="bhrs6" value="bhrs6">Cyclist jumping the curb or riding on sidewalk</input>
-                                <input type="checkbox" name="bhrs7" id="bhrs7" value="bhrs7">Pedestrian crossing without signal</input>
-                                <input type="checkbox" name="bhrs8" id="bhrs8" value="bhrs8">Pedestrian crossing midblock or walking outside sidewalk</input>
-                            </select>
                         <br>
                         <!-- select all for unsafe conditions or dangerous location options -->
                          <label>Were there any unsafe conditions? Select all that apply.</label><br>
                             <!--<select id="location" name="location" multi=True required>-->
-                                <input type="checkbox" name="loc1" id="loc1" value="loc1">No Crosswalk</input>
+                                <input type="checkbox" name="loc1" id="loc1" value="loc1" >No Crosswalk</input>
                                 <input type="checkbox" name="loc2" id="loc2" value="loc2">No Sidewalk</input>
                                 <input type="checkbox" name="loc3" id="loc3" value="loc3">No Stop Signs</input>
                                 <input type="checkbox" name="loc4" id="loc4" value="loc4">Broken Signals or Signs</input>
@@ -168,7 +230,7 @@
                                 <input type="checkbox" name="loc13" id="loc13" value="loc13">Item/debris blocking roadway</input>
                             </select>
                         <br>
-                        <!-- select all for unsafe conditions or dangerous location options -->
+                        <!-- date and time picker -->
                         <label for="event_datetime">Date and Time:</label>
                         <input type="datetime-local" id="event_datetime" name="event_datetime" required>
                         <!-- hidden lat and long -->
@@ -180,6 +242,8 @@
                     </form>
                 </div>
             </div>
+        </div>
+    </div>
 
 
     
@@ -418,16 +482,16 @@
 
 
 
-    <!-- footer -->
-    <br>
-    <br>
-    <br>
+<!-- footer -->
+<br>
+<br>
+<br>
     <div class="footer">
         <br>
         <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
         <h2>PlanRVA is where the region comes together to look ahead.</h2>
         <br>
-        <p>Made by Elizabeth Greenwell for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
+        <p>Made for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
     </div>
 </body>
 </html>
