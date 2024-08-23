@@ -142,6 +142,7 @@
                     <br>
                     <br>
                     <div class="modal-body mt-0">
+                        <!-- select all for unsafe behaviors options -->
                         <span>Were any unsafe behaviors exhibited? Select all that apply.</span>
                             <div class="mt-3">
                                 <div class="p-2 rounded checkbox-form">
@@ -209,26 +210,119 @@
                                     </div>     
                                 </div> 
                             </select>
+                            </div>
                         <br>
                         <br>
+                            <!-- select all for unsafe conditions or dangerous location options -->
+                            <span>Were there any unsafe conditions? Select all that apply.</span>
+                            <div class="mt-3">
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc1" id="loc1" position="left-aligned">
+                                        <label class="form-check-label" for="loc1">
+                                        No Crosswalk
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc2" id="loc2" position="left-aligned">
+                                        <label class="form-check-label" for="loc2">
+                                        No Sidewalk
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc3" id="loc3" position="left-aligned">
+                                        <label class="form-check-label" for="loc3">
+                                        No Stop Signs
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc4" id="loc4" position="left-aligned">
+                                        <label class="form-check-label" for="loc4">
+                                        Broken Signals or Signs
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc5" id="loc5" position="left-aligned">
+                                        <label class="form-check-label" for="loc5">
+                                        Not enough time for pedestrians to cross the street
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc6" id="loc6" position="left-aligned">
+                                        <label class="form-check-label" for="loc6">
+                                        Poor Visibility - item blocking signs or signals
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc7" id="loc7" position="left-aligned">
+                                        <label class="form-check-label" for="loc7">
+                                        Poor Visibliity - poor sightlines
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc8" id="loc8" position="left-aligned">
+                                        <label class="form-check-label" for="loc8">
+                                        Potholes
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc9" id="loc9" position="left-aligned">
+                                        <label class="form-check-label" for="loc9">
+                                        Loose gravel or standing water
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc10" id="loc10" position="left-aligned">
+                                        <label class="form-check-label" for="loc10">
+                                        Road grade or grade of side slopes
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc11" id="loc11" position="left-aligned">
+                                        <label class="form-check-label" for="loc11">
+                                        Item/debris blocking sidewalk or crosswalk
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc12" id="loc12" position="left-aligned">
+                                        <label class="form-check-label" for="loc12">
+                                        Item/debris blocking bikeway
+                                        </label>
+                                    </div>     
+                                </div>
+                                <div class="p-2 rounded checkbox-form">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="loc13" id="loc13" position="left-aligned">
+                                        <label class="form-check-label" for="loc13">
+                                        Item/debris blocking roadway
+                                        </label>
+                                    </div>     
+                                </div>
+                                </select>
+                            </div>
                         <br>
-                        <!-- select all for unsafe conditions or dangerous location options -->
-                         <label>Were there any unsafe conditions? Select all that apply.</label><br>
-                            <!--<select id="location" name="location" multi=True required>-->
-                                <input type="checkbox" name="loc1" id="loc1" value="loc1" >No Crosswalk</input>
-                                <input type="checkbox" name="loc2" id="loc2" value="loc2">No Sidewalk</input>
-                                <input type="checkbox" name="loc3" id="loc3" value="loc3">No Stop Signs</input>
-                                <input type="checkbox" name="loc4" id="loc4" value="loc4">Broken Signals or Signs</input>
-                                <input type="checkbox" name="loc5" id="loc5" value="loc5">Not enough time for pedestrians to cross the street</input>
-                                <input type="checkbox" name="loc6" id="loc6" value="loc6">Poor Visibility - item blocking signs or signals</input>
-                                <input type="checkbox" name="loc7" id="loc7" value="loc7">Poor Visibliity - poor sightlines</input>
-                                <input type="checkbox" name="loc8" id="loc8" value="loc8">Potholes</input>
-                                <input type="checkbox" name="loc9" id="loc9" value="loc9">Loose gravel or standing water</input>
-                                <input type="checkbox" name="loc10" id="loc10" value="loc10">Road grade or grade of side slopes</input>
-                                <input type="checkbox" name="loc11" id="loc11" value="loc11">Item/debris blocking sidewalk or crosswalk</input>
-                                <input type="checkbox" name="loc12" id="loc12" value="loc12">Item/debris blocking bikeway</input>
-                                <input type="checkbox" name="loc13" id="loc13" value="loc13">Item/debris blocking roadway</input>
-                            </select>
                         <br>
                         <!-- date and time picker -->
                         <label for="event_datetime">Date and Time:</label>
@@ -245,6 +339,17 @@
         </div>
     </div>
 
+    <!-- footer -->
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <br>
+        <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
+        <h2>PlanRVA is where the region comes together to look ahead.</h2>
+        <br>
+        <p>Made for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
+    </div>
 
     
     <!-- J Query -->
@@ -475,23 +580,5 @@
         
     </script>
     <!-- end map drawing and form functions -->
-     
-
-
-
-
-
-
-<!-- footer -->
-<br>
-<br>
-<br>
-    <div class="footer">
-        <br>
-        <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
-        <h2>PlanRVA is where the region comes together to look ahead.</h2>
-        <br>
-        <p>Made for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
-    </div>
 </body>
 </html>
