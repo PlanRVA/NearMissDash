@@ -13,6 +13,13 @@ body, .navbar, .navbar-brand, .nav-link, button {
     color: #C84107;
     opacity: 0.5;
 }
+.custom-icon {
+    font-size: 24px;
+    opacity: 0.5;
+}
+.icon-red  { color: #C84107; }
+.icon-orange  { color: #EE810E; }
+.icon-yellow  { color: #FBB92C; }
 .custom-marker {
     font-size: 24px;
     color: #C84107;
