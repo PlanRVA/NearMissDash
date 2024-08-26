@@ -25,7 +25,8 @@
 
 <!-- begin body -->
 <body>
-    <h1>Richmond Regional Near Miss Dashboard</h1>
+    <img class="left-aligned" src="{{url_for('static', filename='nearmiss1.png') }}" alt="PlanRVA Image">
+    <h3>For the PlanRVA Region</h3>
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -54,10 +55,10 @@
         </nav>
 
         
-        <h4>Helpful Definitions</h4>
+        <h3>Helpful Definitions</h3>
         <br>
-        <h4>
-            The National Safety Council defines a Near Miss as an unplanned event that does not result in injury or death, but could have.
+        <h6>
+            The <a href="https://www.nsc.org/workplace/resources/near-miss-reporting#:~:text=A%20near%20miss%20is%20an,work%20%E2%80%93%20often%20are%20not%20reported." class="padded-text">National Safety Council</a> defines a Near Miss as an unplanned event that does not result in injury or death, but could have.
             For this reporting tool, PlanRVA recognizes that many collisions go unreported to police. This reporting tool aims to capture any event not formally reported. 
             Near misses and collisions are differentiated in the reporting form. 
             <br>
@@ -65,7 +66,7 @@
             Reporting an unsafe condition or location is highly useful to other dashboard users and to PlanRVA staff. 
             Unsafe conditions are structural or environmental conditions that are likely to cause a crash.
             Some examples of unsafe conditions are: locations lacking a sidewalk or bike lane, items blocking the sidewalk or bike lane, potholes, debris in roadway, or poor visibility.
-        </h4>
+        </h6>
       <!--  <img src="{{url_for('static', filename='examples1.png') }}" alt="Examples">-->
 <!-- footer -->
 <div class="footer">
@@ -73,7 +74,7 @@
     <img src="{{url_for('static', filename='PlanRVA_White.png') }}" alt=""PlanRVA Image">
     <h2>PlanRVA is where the region comes together to look ahead.</h2>
     <br>
-    <p>Made by Elizabeth Greenwell for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
+    <p>Made for PlanRVA, 2024. Maitenance and contact: nearmiss@planrva.org</p>
 </div>
 </body>
 </html>

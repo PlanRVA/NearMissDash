@@ -1,0 +1,22 @@
+bhrs1 - Car approaching or passing too closely
+bhrs2 - Car catching yellow light
+bhrs3 - Car making improper right on red
+bhrs4 - Car failing to yield to pedestrian or cyclist
+bhrs5 - Car opening door into bike lane
+bhrs6 - Cyclist jumping the curb or riding on sidewalk
+bhrs7 - Pedestrian crossing without signal
+bhrs8 - Pedestrian crossing midblock or walking outside sidewalk
+
+loc1 - No Crosswalk
+loc2 - No Sidewalk
+loc3 - No stop Signs
+loc4 - Broken signals or signs
+loc5 - not enough time for pedestrians to cross the street
+loc6 - poor visibility - item blocking signs or signals
+loc7 - poor visibility - poor sightlines
+loc8 - potholes
+loc9 - loose gravel or standing water
+loc10 - road grade or grade of side slopes
+loc11 - item/debris blocking sidewalk or crosswalk
+loc12 - item/debris blocking bikeway
+loc13 - item/debris blocking roadway
