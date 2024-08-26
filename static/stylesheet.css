@@ -6,6 +6,7 @@
 /* consistent font */
 body, .navbar, .navbar-brand, .nav-link, button {
     font-family: 'Montserrat', sans-serif;
+    color: #7D68AE !important;
 }
 /* marker intended for all events on map */
 .custom-icon {
