@@ -21,8 +21,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
-JSONBIN_API_URL = 'https://api.jsonbin.io/v3/b/66c62ec8ad19ca34f8991e19'
-JSONBIN_ACCESS_KEY = '$2a$10$B0rnHrZiaswLGmon7BTCveoCdWMb/TaIWMYJ/Bwch3Ym/agGopUv2'
+JSONBIN_ACCESS_KEY = '$2a$10$7B8tVje037JkjFrFjBuXauoSw5x7XdSVhSL2KfUqm7XfcNSOhQ8ae'
+JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66ce2fe9e41b4d34e42626f8'
 
 #tell flask to read home page
 @app.route('/')
@@ -75,8 +75,8 @@ def add_feature():
         return jsonify(update_response.json()), 200
     else:
         return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
-#tell flask how to show map from JSONBin data
-@app.route('/get-map-data', methods=['GET'])
+#Tell Flask how to read bin
+@app.route('/get-map-data',  methods=['GET'])
 def get_map_data():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
