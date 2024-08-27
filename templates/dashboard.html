@@ -83,16 +83,13 @@
     <body>
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Site</a>
+            <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <a class="navbar-brand" href="#">
-                            <img src="{{url_for('static', filename='arrow2.png') }}" width="100" height="40" alt="">
-                        </a>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
@@ -159,10 +156,13 @@
             })
         };
 
+
         // define function to get reportTypes and apply custom icons
         function getIcon(reportType) {
             return customIcons[report_type] || customIcons['Dangerous Location'];  // Default to 'Dangerous Location' if no match
         }
+
+
 
         // Fetch GeoJSON data from Flask app
         fetch('/get-map-data')
@@ -175,7 +175,8 @@
                 console.error('Error fetching map data:', error);
         });
 
-        // Initialize the Leaflet map (Assuming 'map' is your Leaflet map instance)
+
+        // Initialize the Leaflet map
         jsonData.features.forEach(function(feature) {
             var coords = feature.geometry.coordinates;
             var reportType = feature.properties.report_type;
@@ -185,9 +186,16 @@
             L.marker([coords[1], coords[0]], { icon: icon }).addTo(map);
         });
 
+        // give features custom icon
+        L.geoJSON(jsonData, {
+            onEachFeature: onEachFeature,
+            pointToLayer: function(feature, latlng) {
+                // Use the getIcon function to get the appropriate icon for the marker
+                return L.marker(latlng, { icon: getIcon(feature.properties.report_type) });
+            }
+        }).addTo(map);
 
-
-
+        // give features custom popup
         function onEachFeature(feature, layer) {
             if (feature.properties && feature.properties.report_type) {
                 let popupContent = `
@@ -199,14 +207,7 @@
                 layer.bindPopup(popupContent);
             }
         }
-
-        L.geoJSON(jsonData, {
-            onEachFeature: onEachFeature,
-            pointToLayer: function(feature, latlng) {
-                // Use the getIcon function to get the appropriate icon for the marker
-                return L.marker(latlng, { icon: getIcon(feature.properties.report_type) });
-            }
-        }).addTo(map);
+        
 
 
 
