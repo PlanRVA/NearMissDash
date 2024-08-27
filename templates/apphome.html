@@ -466,22 +466,7 @@
                     datetime: datetime
                 }
             };
-            fetch('/add-feature', {
-                method: 'POST',
-                headers: {
-                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                console.log('Success:', result);
-                alert("Thank you for your submission!");
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Submission error. Please try again.");
-            });
+
 
 
 

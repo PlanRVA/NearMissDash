@@ -158,22 +158,27 @@
 
 
         // Fetch GeoJSON data from Flask app
-        fetch('/get_map_data')
-        .then(response => response.json())
-        .then(data => {
-            data.features.forEach(feature => {
-                var coordinates = feature.geometry.coordinates;
-                var lat = coordinates[1]; // Latitude
-                var lng = coordinates[0]; // Longitude
-                
-                var marker = L.marker([lat, lng]).addTo(map);
+        fetch('/data')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(function(feature) {
+                    // Extract longitude and latitude from the geometry object
+                    var lng = feature.geometry.coordinates[0];
+                    var lat = feature.geometry.coordinates[1];
 
-                // properties - bind them to the marker popup
-                if (feature.properties && feature.properties.report_type) {
-                    marker.bindPopup(feature.properties.report_type).openPopup();
-                }
-            });
-        });
+                    // Extract additional properties for the popup
+                    var reportType = feature.properties.report_type;
+                    var datetime = feature.properties.datetime;
+
+                    // Add a marker to the map
+                    L.marker([lat, lng]).addTo(map)
+                        .bindPopup(`
+                            <b>Report Type:</b> ${reportType}<br>
+                            <b>Date & Time:</b> ${datetime}
+                    `);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
 
         // Initialize the Leaflet map
          // jsonData.features.forEach(function(feature) {
