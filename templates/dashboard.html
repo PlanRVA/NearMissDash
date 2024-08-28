@@ -44,14 +44,14 @@
             text-align: center;
             margin: 20px 20px 0 0;
         }
-        .custom-marker {
-            font-size: 24px;
-            color: #C84107;
-            opacity: 0.5;
-        }
         .custom-icon {
             font-size: 24px;
             opacity: 0.5;
+            border: none !important; 
+            padding: 0;   
+            margin: 0;    
+            background: none !important;
+            box-shadow: none !important; 
         }
         .icon-red  { color: #C84107; }
         .icon-orange  { color: #EE810E; }
@@ -74,6 +74,13 @@
         }
         .step {display: none; }
         .step.active {display: block;}
+        .leaflet-div-icon {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
     </style>
 </head>
 <!-- begin body -->
@@ -116,7 +123,11 @@
         <br>
         <img src="{{url_for('static', filename='bike.png') }}" alt=""PlanRVA Image"> 
         <br>
+        <i class="bi bi-geo-alt-fill"></i>
         <br>
+        <div class = "chart-container">
+            <canvas id="chart"></canvas>
+        </div>
         <br>
         <!-- Bootstrap --><!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -125,11 +136,11 @@
         <!-- Popper -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <script>
-            // Have the map, setup the custom base map
-            var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
-            var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
+        // Have the map, setup the custom base map
+        var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
+        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
 
-            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'egreenwell/clmumfc1405gk01maaqrxhmfn',  // Your Mapbox style ID
             accessToken: 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ',
             tileSize: 512,
@@ -140,46 +151,69 @@
         // define custom icons based on report type, custom icons class name from CSS
         var customIcons = {
             "Collision": L.divIcon({ 
-                html: '<i class="bi bi-geo-alt-fill icon-red"></i>', 
+                html: '<i class="bi bi-geo-alt-fill custom-icon icon-red"></i>', 
                 className: '', 
-                iconSize: [24, 24] 
             }),
             "Near Miss": L.divIcon({ 
-                 html: '<i class="bi bi-geo-alt-fill icon-orange"></i>', 
+                html: '<i class="bi bi-geo-alt-fill custom-icon icon-orange"></i>', 
                 className: '', 
-                 iconSize: [24, 24] 
             }),
             "Dangerous Location": L.divIcon({ 
-                html: '<i class="bi bi-geo-alt-fill icon-yellow"></i>', 
+                html: '<i class="bi bi-geo-alt-fill custom-icon icon-yellow"></i>', 
                 className: '', 
-                 iconSize: [24, 24] 
             })
         };
- 
-        function getIcon(reportType) {
-            return customIcons[reportType] || customIcons['Dangerous Location'];  // Default to 'Dangerous Location' if no match
-            }
 
-        function onEachFeature(feature, layer) {
-                if (feature.properties && feature.properties.report_type) {
-                    layer.bindPopup('Event: ' + feature.properties.report_type + '<br>Date: ' + feature.properties.datetime);
-                }
-            }
+        // Fetch GeoJSON data from Flask app - backup section to revert to if icons are not working
+        //fetch('/get-map-data')
+        //    .then(response => response.json())
+        //    .then(data => {
+                // Add GeoJSON data to the map
+        //        L.geoJSON(data.record).addTo(map);
+        //    })
+        //.catch(error => {
+        //    console.error('Error fetching map data:', error);
+        //});
 
-        // Fetch GeoJSON data from Flask app
         fetch('/get-map-data')
             .then(response => response.json())
-                .then(data => {
-                    // Add GeoJSON data to the map
-                    L.geoJSON(data.record).addTo(map);
-                })
-                .catch(error => {
-                    console.error('Error fetching map data:', error);
-                });
+            .then(data => {
+                // Add GeoJSON data to the map with custom icons
+                L.geoJSON(data.record, {
+                    pointToLayer: function(feature, latlng) {
+                        // Determine the appropriate icon based on the report type
+                        var reportType = feature.properties.report_type;
+                        var icon = L.divIcon({ 
+                            html: '<i class="bi bi-geo-alt-fill custom-icon ' + getIconClass(reportType) + '"></i>', 
+                        });
+                        
+                        return L.marker(latlng, { icon: icon });
+                    }
+                }).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error fetching map data:', error);
+            });
 
+        // function necessary to get icons to match on the data
+        function getIconClass(reportType) {
+            switch(reportType) {
+                case "Collision": return "icon-red";
+                case "Near Miss": return "icon-orange";
+                case "Dangerous Location": return "icon-yellow";
+            }
+        }
 
+        
 
+        
 
+        // construct donut chart
+        const ctx = doucment.getElementById("chart").getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: L.geoJSON(data.record),
+            });
 
 
 

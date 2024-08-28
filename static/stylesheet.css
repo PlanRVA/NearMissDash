@@ -13,6 +13,11 @@ body, .navbar, .navbar-brand, .nav-link, button {
     font-size: 24px;
     color: #C84107;
     opacity: 0.5;
+    border: none !important; 
+    padding: 0;   
+    margin: 0;   
+    background: none !important; 
+    box-shadow: none !important; 
 }
 .custom-icon {
     font-size: 24px;
@@ -32,7 +37,12 @@ body, .navbar, .navbar-brand, .nav-link, button {
 /* unsure what these are for */
 .step {display: none; }
 .step.active {display: block;}
-
+/* chart on dashboard page */
+.chart-container {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
 
 
 
