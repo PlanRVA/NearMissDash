@@ -164,6 +164,31 @@
             })
         };
 
+        // format the datetime string from what is in the JSON to diff.
+        function formatDateTime(datetime) {
+            const date = new Date(datetime);
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            };
+            return date.toLocaleString('en-US', options);
+        }
+
+        // add a popup with the desired content
+        function onEachFeature(feature, layer) {
+            if (feature.properties && feature.properties.report_type && feature.properties.datetime) {
+                const popupContent = `
+                    <strong>Report Type:</strong> ${feature.properties.report_type}<br>
+                    <strong>Date and Time:</strong> ${formatDateTime(feature.properties.datetime)}
+                `;
+                layer.bindPopup(popupContent);
+            }
+        }
+
         // Fetch GeoJSON data from Flask app - backup section to revert to if icons are not working
         //fetch('/get-map-data')
         //    .then(response => response.json())
@@ -188,7 +213,8 @@
                         });
                         
                         return L.marker(latlng, { icon: icon });
-                    }
+                    },
+                    onEachFeature: onEachFeature // the popup
                 }).addTo(map);
             })
             .catch(error => {
