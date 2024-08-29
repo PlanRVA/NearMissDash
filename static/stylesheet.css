@@ -42,9 +42,13 @@ body, .navbar, .navbar-brand, .nav-link, button {
     width: 50%;
     height: 50%;
     margin: auto;
-    background: none !important;
 }
-
+/* used on dashboard page */
+.map-container {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
 
 
 

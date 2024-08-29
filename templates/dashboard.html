@@ -84,7 +84,6 @@
             width: 50%;
             height: 50%;
             margin: auto;
-            background: none !important;
         }
     </style>
 </head>
@@ -124,16 +123,17 @@
             </div>
         </nav>
         <!-- map -->
-        <div id="map"></div>
+        <div class = "map-container">
+            <div class="row">
+                    <div id="map">
+                    </div>
+            </div>
+        </div>
         <br>
         <!-- chart1 -->
-        <div class = "chart-container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="chart" id="doughnut">
-                    </div>
-                </div>
-            </div>
+        <div class="row"> 
+            <h5>Submitted Event Types</h5>
+            <canvas id="myChart" width="400" height="400"></canvas>
         </div>
         <br>
         <!-- Bootstrap -->
@@ -144,11 +144,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <!-- Chart -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <script>
         // Have the map, setup the custom base map
         var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
-        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
+        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 9.35);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'egreenwell/clmumfc1405gk01maaqrxhmfn',  // Your Mapbox style ID
             accessToken: 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ',
@@ -226,6 +226,7 @@
             .catch(error => {
                 console.error('Error fetching map data:', error);
             });
+
         // function necessary to get icons to match on the data
         function getIconClass(reportType) {
             switch(reportType) {
@@ -234,6 +235,10 @@
                 case "Dangerous Location": return "icon-yellow";
             }
         }
+
+
+
+
         // construct donut chart - chart 1
         // Fetch the GeoJSON data again from the route
         fetch('/get-map-data')
@@ -242,7 +247,7 @@
                 // get counts of report types
                 const reportTypeCounts = {};
                 data.features.forEach(feature => {
-                    const reportType = feature.properties.report_type;
+                    var reportType = feature.properties.report_type;
                     if (reportTypeCounts[reportType]) {
                         reportTypeCounts[reportType]++;
                     } else {
@@ -252,8 +257,6 @@
                 // Prepare the data for the chart
                 const labels = Object.keys(reportTypeCounts);
                 const counts = Object.values(reportTypeCounts);
-                const total = counts.reduce((sum, count) => sum + count, 0);
-                const percentages = counts.map(count => (count / total * 100).toFixed(2));
                 // Define colors based on report types
                 const colors = labels.map(label => {
                     switch (label) {
@@ -262,35 +265,29 @@
                         case "Dangerous Location": return "#FBB92C";
                     }
                 });
-                const ctx = document.getElementById('doughnut').getContext('2d');
+                const ctx = document.getElementById('myChart').getContext('2d');
+
                 const myChart = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Report Types',
-                            data: percentages,
+                            label: 'Report Type',
+                            data: counts,
                             backgroundColor: colors,
                             borderColor: colors.map(color => color), //  the border
                             borderWidth: 1
                         }]
                     },
                     options: {
-                        responsive: true,
                         plugins: {
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        return context.label + ': ' + context.raw + '%';
-                                    }
-                                }
+                            legend: {
+                                position: 'top',
                             }
                         }
                     }
                 });
-            })
-            .catch(error => console.error('Error fetching GeoJSON data:', error))
-
+            });
 
 
 

@@ -95,7 +95,7 @@
         <br>
         <h3>Contact Us</h3>
         <div class="container">
-            <form action="/submit" method="post">
+            <form id="messageForm" action="/addmsg" method="post">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br>
                 <label for="email">Email:</label><br>
@@ -116,28 +116,41 @@
         </div>
         <script>
             // submission and modal handling
-            var modal = document.getElementById("myModal");
             var successModal = document.getElementById("successModal");
-            document.getElementById("contactForm").onsubmit = function(event) {
-                event.preventDefault(); // Prevent default form submission
-                var formData = new FormData(event.target);   // FormData(event.target) might be correct or (this)?
-                fetch('/submit', {
+            document.getElementById("messageForm").addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                    // Capture form data
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    // Construct JSON object
+                    const formData = {
+                        "Name": name,
+                        "email": email,
+                        "message": message
+                    };
+                
+                fetch('/addmsg', {
                     method: 'POST',
-                    body: formData,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': 'YOUR_API_KEY' // Replace with your JSONBin secret key
+                    },
+                    body: JSON.stringify([formData]) 
                 })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.message) {
+                    console.log('Success:', data);
                     // Display the success modal
                     document.getElementById('successModal').style.display = 'block';
                 }
+            )
+            .catch(error => 
+                console.error('Error:', error));
+                alert('There was an error submitting your message.');
             })
-            .catch(error => console.error('Error:', error));
-            };
-            function closeModal() {
-                document.getElementById('successModal').style.display = 'none';
-                window.location.href = '/'; // Redirect to the home page
-            }
+
+
         </script>
 <!-- footer -->
 <div class="footer">
