@@ -54,9 +54,6 @@
         .step.active {display: block;}
     </style>
 </head>
-
-
-
 <!-- begin body -->
 <body>
     <img class="left-aligned" src="{{url_for('static', filename='nearmiss1.png') }}" alt="PlanRVA Image">
@@ -92,10 +89,6 @@
                 </div>
             </div>
         </nav>
-
-
-
-       
         <br>
         <br>
         <br>
@@ -112,50 +105,40 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-
-        
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- Modal -->
+        <div id="successModal" style="display:none;">
+            <p>Thank you for your inquiry!</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
         <script>
-            // Modal handling (similar to before)
-        
+            // submission and modal handling
             var modal = document.getElementById("myModal");
             var successModal = document.getElementById("successModal");
-            var successMessage = document.getElementById("successMessage");
-        
             document.getElementById("contactForm").onsubmit = function(event) {
                 event.preventDefault(); // Prevent default form submission
-        
-                var formData = new FormData(event.target);
-        
+                var formData = new FormData(event.target);   // FormData(event.target) might be correct or (this)?
                 fetch('/submit', {
                     method: 'POST',
                     body: formData,
                 })
                 .then(response => response.json())
                 .then(data => {
-                    // Close the original modal
-                    modal.style.display = "none";
-        
-                    // Show the success modal
-                    successMessage.innerText = data.message;
-                    successModal.style.display = "block";
-        
-                    // Redirect to home after a short delay
-                    setTimeout(function() {
-                        successModal.style.display = "none";
-                        window.location.href = "/";
-                    }, 2000); // Adjust delay as needed
-                })
-                .catch(error => console.error('Error:', error));
+                    if (data.message) {
+                    // Display the success modal
+                    document.getElementById('successModal').style.display = 'block';
+                }
+            })
+            .catch(error => console.error('Error:', error));
             };
-        
-            // Modal close button handlers (similar to before)
+            function closeModal() {
+                document.getElementById('successModal').style.display = 'none';
+                window.location.href = '/'; // Redirect to the home page
+            }
         </script>
-
-
-
-
-
 <!-- footer -->
 <div class="footer">
     <br>
