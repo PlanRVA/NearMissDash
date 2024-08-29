@@ -56,7 +56,6 @@
         .icon-red  { color: #C84107; }
         .icon-orange  { color: #EE810E; }
         .icon-yellow  { color: #FBB92C; }
-
         .btn-container {
             margin: 10px;
         }
@@ -80,6 +79,12 @@
             box-shadow: none !important;
             padding: 0 !important;
             margin: 0 !important;
+        }
+        .chart-container {
+            width: 50%;
+            height: 50%;
+            margin: auto;
+            background: none !important;
         }
     </style>
 </head>
@@ -121,25 +126,29 @@
         <!-- map -->
         <div id="map"></div>
         <br>
-        <img src="{{url_for('static', filename='bike.png') }}" alt=""PlanRVA Image"> 
-        <br>
-        <i class="bi bi-geo-alt-fill"></i>
-        <br>
+        <!-- chart1 -->
         <div class = "chart-container">
-            <canvas id="chart"></canvas>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="chart" id="doughnut">
+                    </div>
+                </div>
+            </div>
         </div>
         <br>
-        <!-- Bootstrap --><!-- Bootstrap -->
+        <!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <!-- leaflet and leaflet plugins-->
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <!-- Popper -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+        <!-- Chart -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
         <script>
         // Have the map, setup the custom base map
         var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
         var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
-
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'egreenwell/clmumfc1405gk01maaqrxhmfn',  // Your Mapbox style ID
             accessToken: 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ',
@@ -147,8 +156,7 @@
             zoomOffset: -1,
             attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>'
         }).addTo(map);
-
-        // define custom icons based on report type, custom icons class name from CSS
+        // defining custom icons based on report type, custom icons class name from CSS
         var customIcons = {
             "Collision": L.divIcon({ 
                 html: '<i class="bi bi-geo-alt-fill custom-icon icon-red"></i>', 
@@ -163,8 +171,7 @@
                 className: '', 
             })
         };
-
-        // format the datetime string from what is in the JSON to diff.
+        // formatting the datetime string from what is in the JSON to diff.
         function formatDateTime(datetime) {
             const date = new Date(datetime);
             const options = {
@@ -177,8 +184,7 @@
             };
             return date.toLocaleString('en-US', options);
         }
-
-        // add a popup with the desired content
+        // formatting the map popups
         function onEachFeature(feature, layer) {
             if (feature.properties && feature.properties.report_type && feature.properties.datetime) {
                 const popupContent = `
@@ -188,8 +194,7 @@
                 layer.bindPopup(popupContent);
             }
         }
-
-        // Fetch GeoJSON data from Flask app - backup section to revert to if icons are not working
+        // Fetch GeoJSON data from '/get-map-data' - backup section to revert to if icons are not working
         //fetch('/get-map-data')
         //    .then(response => response.json())
         //    .then(data => {
@@ -200,6 +205,7 @@
         //    console.error('Error fetching map data:', error);
         //});
 
+         // Fetch GeoJSON data from '/get-map-data'
         fetch('/get-map-data')
             .then(response => response.json())
             .then(data => {
@@ -220,7 +226,6 @@
             .catch(error => {
                 console.error('Error fetching map data:', error);
             });
-
         // function necessary to get icons to match on the data
         function getIconClass(reportType) {
             switch(reportType) {
@@ -229,17 +234,62 @@
                 case "Dangerous Location": return "icon-yellow";
             }
         }
-
-        
-
-        
-
-        // construct donut chart
-        const ctx = doucment.getElementById("chart").getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: L.geoJSON(data.record),
-            });
+        // construct donut chart - chart 1
+        // Fetch the GeoJSON data again from the route
+        fetch('/get-map-data')
+            .then(response => response.json())
+            .then(data => {
+                // get counts of report types
+                const reportTypeCounts = {};
+                data.features.forEach(feature => {
+                    const reportType = feature.properties.report_type;
+                    if (reportTypeCounts[reportType]) {
+                        reportTypeCounts[reportType]++;
+                    } else {
+                        reportTypeCounts[reportType] = 1;
+                    }
+                });
+                // Prepare the data for the chart
+                const labels = Object.keys(reportTypeCounts);
+                const counts = Object.values(reportTypeCounts);
+                const total = counts.reduce((sum, count) => sum + count, 0);
+                const percentages = counts.map(count => (count / total * 100).toFixed(2));
+                // Define colors based on report types
+                const colors = labels.map(label => {
+                    switch (label) {
+                        case "Collision": return "#C84107";
+                        case "Near Miss": return "#EE810E";
+                        case "Dangerous Location": return "#FBB92C";
+                    }
+                });
+                const ctx = document.getElementById('doughnut').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Report Types',
+                            data: percentages,
+                            backgroundColor: colors,
+                            borderColor: colors.map(color => color), //  the border
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': ' + context.raw + '%';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching GeoJSON data:', error))
 
 
 

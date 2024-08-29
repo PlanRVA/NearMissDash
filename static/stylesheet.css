@@ -42,6 +42,7 @@ body, .navbar, .navbar-brand, .nav-link, button {
     width: 50%;
     height: 50%;
     margin: auto;
+    background: none !important;
 }
 
 
