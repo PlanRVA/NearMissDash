@@ -69,8 +69,12 @@
             background-color: #D0C126;
             border: none; /* Removes the default border */
         }
+        .map-container {
+            width: 500px;  /* Adjust width as needed */
+            margin: 20px auto;
+        }
         #map {
-            height: 600px;
+            height: 600px; /* must stay like this */
             width: 100%;
         }
         .step {display: none; }
@@ -83,9 +87,17 @@
             margin: 0 !important;
         }
         .chart-container {
-            width: 50%;
-            height: 50%;
-            margin: auto;
+            height: 300px; /* must be half of map height */
+            width: 300px;  /* Adjust width as needed */
+            position: relative;
+        }
+        canvas {
+            display: block;
+            height: 100%; /* Use 100% to fill parent container */
+            width: auto;  /* not to stretch the canvas */
+            max-height: 100%; /* Ensures chart height doesn't exceed container */
+            max-width: 100%;  /* Ensures chart width doesn't exceed container */
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -110,7 +122,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/charttest">charttest</a>
-                        </li
+                        </li>
                         <!--<li class="nav-item">
                         <a class="nav-link" href="/contact">Data Requests</a>
                         </li>-->
@@ -127,18 +139,26 @@
                 </div>
             </div>
         </nav>
-        <!-- map -->
-        <div class = "map-container">
+
+        <!-- map and chart in bootstrap setup-->
+        <div class="container-fluid">
             <div class="row">
-                    <div id="map">
+                <div class="col-md-6">
+                    <!-- map -->
+                    <div class = "map-container">
+                        <div id="map"></div>
                     </div>
+                </div>   
+                <div class="col-md-6">
+                    <!-- charts -->
+                    <div class="chart-container"> 
+                        <canvas id="pieChart1"></canvas>
+                    </div>
+                    <div class="chart-container"> 
+                        <canvas id="pieChart2"></canvas>
+                    </div>
+                </div>
             </div>
-        </div>
-        <br>
-        <!-- chart1 -->
-        <div class="row"> 
-            <h5>Submitted Event Types</h5>
-            <div id="bokeh-chart"></div>
         </div>
         <br>
         <!-- Bootstrap -->
@@ -150,6 +170,7 @@
         <!-- Chart -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="charts.js"></script>
         <script>
         // Have the map, setup the custom base map
         var accessToken = 'pk.eyJ1IjoiZWdyZWVud2VsbCIsImEiOiJjbG11bTc4MjcwMHhlMmxwaGNxNmNsYWszIn0.RZ3BCvRRCmJiXBS2Qi16kQ';
@@ -243,12 +264,12 @@
 
 
 
-
-         // Bokeh chart
          const pie_data = {
             labels: ['Collision', 'Near Miss', 'Dangerous Location'],
-            values: [4, 6, 8], 
-            colors: ['#C84107', '#EE810E', '#FBB92C']
+            datasets: [{
+                data: [4, 6, 8],
+                backgroundColor: ['#C84107', '#EE810E', '#FBB92C'],
+            }]
         };
         const pie2_data = {
             labels: [
@@ -257,10 +278,57 @@
                 'Near Miss with Stationary Object or Vehicle',
                 'Near Miss with Moving Object or Vehicle',
                 'Unsafe Condition or Location'],
-            values: [1, 3, 2, 4, 8],
-            colors: ['#C84107', '#E96830', '#EE810E', '#F9A64F', '#FBB92C']
+                datasets: [{
+                data: [1, 3, 2, 4, 8],
+                backgroundColor: ['#C84107', '#E96830', '#EE810E', '#F9A64F', '#FBB92C'],
+            }]
         };
         
+        const config1 = {
+            type: 'pie',
+            data: pie_data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}`;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const config2 = {
+            type: 'pie',
+            data: pie2_data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}`;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const ctx1 = document.getElementById('pieChart1').getContext('2d');
+        const pieChart1 = new Chart(ctx1, config1);
+
+        const ctx2 = document.getElementById('pieChart2').getContext('2d');
+        const pieChart2 = new Chart(ctx2, config2);
 
 
 

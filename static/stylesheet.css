@@ -39,9 +39,8 @@ body, .navbar, .navbar-brand, .nav-link, button {
 .step.active {display: block;}
 /* used on dashboard page */
 .map-container {
-    width: 50%;
-    height: 50%;
-    margin: auto;
+    width: 300px;  /* Adjust width as needed */
+    margin: 20px auto;
 }
 /* used on main page */
 .map-main-container {
@@ -55,9 +54,17 @@ body, .navbar, .navbar-brand, .nav-link, button {
     width: 100%;
 }
 .chart-container {
-    width: 50%;
-    height: 50%;
-    margin: auto;
+    height: 300px; /* must be half of map height */
+    width: 300px;  /* Adjust width as needed */
+    position: relative;
+}
+canvas {
+    display: block;
+    height: 100%; /* Use 100% to fill parent container */
+    width: auto;  /* not to stretch the canvas */
+    max-height: 100%; /* Ensures chart height doesn't exceed container */
+    max-width: 100%;  /* Ensures chart width doesn't exceed container */
+    margin: 0 auto;
 }
 
 
