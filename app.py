@@ -30,16 +30,16 @@ def index():
     return render_template('apphome.html')
 
 #tell flask to read about page
-@app.route('/about')
-def about(): 
-    return render_template('about.html')
+#@app.route('/about')
+#def about(): 
+    #return render_template('about.html')
 
 #tell flask to read contact page
-@app.route('/contact')
-def conact(): 
-    return render_template('contact.html')
+#@app.route('/contact')
+#def conact(): 
+    #return render_template('contact.html')
 
-#tell flask to read contact page
+#tell flask to read defs page
 @app.route('/defs')
 def defs(): 
     return render_template('defs.html')
@@ -87,41 +87,6 @@ def get_map_data():
         return jsonify(response.json()), 200
     else:
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
-
-
-
-
-
-
-
-
-
-
-#tell flask how to submit contact form
-def send_email(subject, sender, recipients, text_body):
-    msg = MIMEText(text_body)
-    msg['Subject'] = subject
-    msg['From'] = sender
-    msg['To'] = ", ".join(recipients)
-    try:
-        with smtplib.SMTP_SSL('smtp.live.com', 465) as server:
-            server.login(os.getenv('EMAIL_USER'), os.getenv('EMAIL_PASS'))
-            server.sendmail(sender, recipients, msg.as_string())
-    except Exception as e:
-        print(f"Failed to send email: {e}")
-#tell flask to submit form, success message and reroute home
-@app.route('/submit', methods=['POST'])
-def submit():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-    subject = "New Form Submission"
-    sender = os.getenv('EMAIL_USER')
-    recipients = ["egreenwell@planrva.org"]
-    text_body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-    send_email(subject, sender, recipients, text_body)
-    # Return JSON response
-    return jsonify({"message": "Thank you for your request."})
 
 
 #tell flask run app

@@ -49,7 +49,14 @@ body, .navbar, .navbar-brand, .nav-link, button {
     height: 50%;
     margin: auto;
 }
-
+/* used on main page */
+.map-main-container {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -198,7 +205,7 @@ li a:hover {
     color: #FFFFFF;
 }
 button {
-    display: inline-block;
+    display: flex;
     padding: 10px 10px;
     background-color: #FFFFFF;
     color: #7D68AE;
@@ -213,7 +220,13 @@ button:hover {
     background-color: #7D68AE;
     color: #FFFFFF;
 }
-
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green;
+  }
 
 
 
@@ -308,8 +321,6 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-
-
 /* Style side by side images */
 .column {
     float: left;
@@ -330,13 +341,6 @@ a:hover {
     flex: 33.33%;
     padding: 5px;
   }
-
-
-
-
-
-
-
 
 /* Style for contact form */
 .container {
@@ -377,57 +381,6 @@ input[type="submit"]:hover {
     color: white;
     border: 1px solid white;
 }
-
-
-
-
-
-/* Style for search results */
-.search-results {
-    list-style-type: none;
-    padding: 0;
-    font-size: 20px;
-    font-style: normal;
-}
-.search-results ul {
-    list-style-type: none;
-    padding: 0;
-    font-size: 20px;
-    font-style: normal;
-}
-.search-results li {
-    margin-bottom: 10px;
-    border: 1px solid #FFFFFF;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 20px;
-    font-style: normal;
-}
-/* Style for no results message */
-.search-results p {
-    font-style: italic;
-    color: #525252;
-    font-size: 20px;
-    font-style: normal;
-}
-.search-button {
-    background-color: #FFFFFF;
-    color: #002D74;
-    padding: 10px 10px;
-    text-align: center;
-    border-color: 8px solid #002D74;
-    border-radius: 8px;
-    font-size: 40px;
-}
-.search-button:hover {
-    background-color: #CFFDFC;
-    color: #FFFFFF;
-}
-
-
-
-
-
 
 /* Design the Footer */
 .footer {
