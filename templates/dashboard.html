@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!-- my css -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <!-- necessary for bokeh charts  --> 
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.css" rel="stylesheet">
     <style>
         body, .navbar, .navbar-brand, .nav-link, button {
             font-family: 'Montserrat', sans-serif;
@@ -106,6 +108,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/dashboard">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/charttest">charttest</a>
+                        </li
                         <!--<li class="nav-item">
                         <a class="nav-link" href="/contact">Data Requests</a>
                         </li>-->
@@ -133,7 +138,7 @@
         <!-- chart1 -->
         <div class="row"> 
             <h5>Submitted Event Types</h5>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <div id="bokeh-chart"></div>
         </div>
         <br>
         <!-- Bootstrap -->
@@ -239,55 +244,24 @@
 
 
 
-        // construct donut chart - chart 1
-        // Fetch the GeoJSON data again from the route
-        fetch('/get-map-data')
-            .then(response => response.json())
-            .then(data => {
-                // get counts of report types
-                const reportTypeCounts = {};
-                data.features.forEach(feature => {
-                    var reportType = feature.properties.report_type;
-                    if (reportTypeCounts[reportType]) {
-                        reportTypeCounts[reportType]++;
-                    } else {
-                        reportTypeCounts[reportType] = 1;
-                    }
-                });
-                // Prepare the data for the chart
-                const labels = Object.keys(reportTypeCounts);
-                const counts = Object.values(reportTypeCounts);
-                // Define colors based on report types
-                const colors = labels.map(label => {
-                    switch (label) {
-                        case "Collision": return "#C84107";
-                        case "Near Miss": return "#EE810E";
-                        case "Dangerous Location": return "#FBB92C";
-                    }
-                });
-                const ctx = document.getElementById('myChart').getContext('2d');
+         // Bokeh chart
+         const pie_data = {
+            labels: ['Collision', 'Near Miss', 'Dangerous Location'],
+            values: [4, 6, 8], 
+            colors: ['#C84107', '#EE810E', '#FBB92C']
+        };
+        const pie2_data = {
+            labels: [
+                'Collision with Stationary Object or Vehicle',
+                'Collision with Moving Object or vehicle',
+                'Near Miss with Stationary Object or Vehicle',
+                'Near Miss with Moving Object or Vehicle',
+                'Unsafe Condition or Location'],
+            values: [1, 3, 2, 4, 8],
+            colors: ['#C84107', '#E96830', '#EE810E', '#F9A64F', '#FBB92C']
+        };
+        
 
-                const myChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Report Type',
-                            data: counts,
-                            backgroundColor: colors,
-                            borderColor: colors.map(color => color), //  the border
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        plugins: {
-                            legend: {
-                                position: 'top',
-                            }
-                        }
-                    }
-                });
-            });
 
 
 
