@@ -245,6 +245,11 @@
                     </div>
                     <br>
                     <br>
+                       <!-- <label class="text" for="text">Any other details you would like us to know?</label>
+                        <input type="text" id="text" value="" maxlength="50"></label>
+                        <label class="form-text text-muted" for="text">Limit 50 characters.</label> -->
+                    <br>
+                    <br>
                     <!-- date and time picker -->
                         <label for="event_datetime">Date and Time:</label>
                         <input type="datetime-local" id="event_datetime" name="event_datetime" required>
@@ -430,6 +435,7 @@
             const loc11 = document.getElementById('loc11').checked ? 1 : 0;
             const loc12 = document.getElementById('loc12').checked ? 1 : 0;
             const loc13 = document.getElementById('loc13').checked ? 1 : 0;
+            // const text = document.getElementById('text').value;
             const datetime = form.elements['event_datetime'].value;
             const latitude = parseFloat(form.elements['latitude'].value);
             const longitude = parseFloat(form.elements['longitude'].value);
@@ -465,6 +471,7 @@
                     loc11: loc11,
                     loc12: loc12,
                     loc13: loc13,
+                    //details: text,
                     datetime: datetime
                 }
             };
@@ -476,12 +483,19 @@
             },
             body: JSON.stringify(data)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(result => {
-            console.log('Success:', result);
+            console.log('Success', result);
+            alert('Success: ' + JSON.stringify(result));
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Error', error);
+            alert('Error: ' + error.message);
         });
  
     };
