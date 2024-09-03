@@ -105,40 +105,36 @@
 <body>
     <img class="left-aligned" src="{{url_for('static', filename='nearmiss1.png') }}" alt="PlanRVA Image">
     <h3>For the PlanRVA Region</h3>
-    <body>
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Dashboard</a>
-                        </li>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
                         <!--<li class="nav-item">
-                            <a class="nav-link" href="/charttest">charttest</a>
-                        </li>-->
-                        <!--<li class="nav-item">
-                        <a class="nav-link" href="/contact">Data Requests</a>
+                            <a class="nav-link" href="/contact">Data Requests</a>
                         </li>-->
                         <!--<li class="nav-item">
                             <a class="nav-link" href="/about">About the Dashboard</a>
                         </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/defs">Helpful Definitions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/defs">Helpful Definitions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
         <!-- map and chart in bootstrap setup-->
         <div class="container-fluid">
@@ -235,11 +231,13 @@
         fetch('/get-map-data')
             .then(response => response.json())
             .then(data => {
+
                 // Add GeoJSON data to the map with custom icons
                 L.geoJSON(data.record, {
                     pointToLayer: function(feature, latlng) {
                         // Determine the appropriate icon based on the report type
                         var reportType = feature.properties.report_type;
+                        var eventType = feature.properties.event_type;
                         var icon = L.divIcon({ 
                             html: '<i class="bi bi-geo-alt-fill custom-icon ' + getIconClass(reportType) + '"></i>', 
                         });
@@ -248,6 +246,11 @@
                     },
                     onEachFeature: onEachFeature // the popup
                 }).addTo(map);
+
+                // for the charts
+                const reportTypeTotals = calculateTotals(data.record);
+                const eventTypeTotals = calculateTotals(data.record);
+
             })
             .catch(error => {
                 console.error('Error fetching map data:', error);
@@ -264,10 +267,11 @@
 
 
 
+        // setup data for pie charts
          const pie_data = {
             labels: ['Collision', 'Near Miss', 'Dangerous Location'],
             datasets: [{
-                data: [4, 6, 8],
+                data: [5, 10, 6],
                 backgroundColor: ['#C84107', '#EE810E', '#FBB92C'],
             }]
         };
@@ -279,11 +283,12 @@
                 'Near Miss with Moving Object or Vehicle',
                 'Unsafe Condition or Location'],
                 datasets: [{
-                data: [1, 3, 2, 4, 8],
+                data: [5, 8, 6, 9, 4],
                 backgroundColor: ['#C84107', '#E96830', '#EE810E', '#F9A64F', '#FBB92C'],
             }]
         };
         
+        // setup data pie charts
         const config1 = {
             type: 'pie',
             data: pie_data,
@@ -303,7 +308,6 @@
                 }
             }
         };
-
         const config2 = {
             type: 'pie',
             data: pie2_data,
@@ -323,10 +327,8 @@
                 }
             }
         };
-
         const ctx1 = document.getElementById('pieChart1').getContext('2d');
         const pieChart1 = new Chart(ctx1, config1);
-
         const ctx2 = document.getElementById('pieChart2').getContext('2d');
         const pieChart2 = new Chart(ctx2, config2);
 

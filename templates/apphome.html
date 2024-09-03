@@ -107,9 +107,9 @@
                     <label for="eventType">Select Report Type:</label>
                         <select id="eventType" name="eventType" required>
                             <option value selected>---------</option>
+                            <option value="Collision">Collision</option>
                             <option value="Near Miss">Near Miss</option>
                             <option value="Dangerous Location">Dangerous Location</option>
-                            <option value="Collision">Collision</option>
                          </select>
                     <br>
                     <br>
@@ -293,7 +293,7 @@
     <!-- begin map drawing and modal functions -->
     <script>
         // Initialize the Map
-        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 13);
+        var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 10);
         // Add Mapbox tile layer
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'egreenwell/clmumfc1405gk01maaqrxhmfn',  // Your Mapbox style ID
