@@ -245,9 +245,9 @@
                     </div>
                     <br>
                     <br>
-                       <!-- <label class="text" for="text">Any other details you would like us to know?</label>
-                        <input type="text" id="text" value="" maxlength="50"></label>
-                        <label class="form-text text-muted" for="text">Limit 50 characters.</label> -->
+                        <label for="text">Any other details you would like us to know?</label>
+                        <input type="text" id="text" maxlength="50"></label>
+                        <label class="form-text text-muted" for="text">Limit 50 characters.</label>
                     <br>
                     <br>
                     <!-- date and time picker -->
@@ -435,7 +435,7 @@
             const loc11 = document.getElementById('loc11').checked ? 1 : 0;
             const loc12 = document.getElementById('loc12').checked ? 1 : 0;
             const loc13 = document.getElementById('loc13').checked ? 1 : 0;
-            // const text = document.getElementById('text').value;
+            const text = document.getElementById('text').value;
             const datetime = form.elements['event_datetime'].value;
             const latitude = parseFloat(form.elements['latitude'].value);
             const longitude = parseFloat(form.elements['longitude'].value);
@@ -471,7 +471,7 @@
                     loc11: loc11,
                     loc12: loc12,
                     loc13: loc13,
-                    //details: text,
+                    text: text,
                     datetime: datetime
                 }
             };
@@ -491,7 +491,7 @@
         })
         .then(result => {
             console.log('Success', result);
-            alert('Success: ' + JSON.stringify(result));
+            alert('Success: ' + success.message);
         })
         .catch(error => {
             console.error('Error', error);
