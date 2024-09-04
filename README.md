@@ -3,14 +3,18 @@
 Hi! Welcome to the Regional Near Miss Dashboard GitHub page. The NM Dashboard is made and managed by **PlanRVA**. 
 
 # Unfiled Items
-- app1.ipynb : This is the main python file to run the app.
+- app1.ipynb : This is the python file to run the app locally.
+- appy.py : This is the python file to run on Render/on a server.
 - LICENSE : MIT License. 
 - .gitattributes : Unsure.
 - pyenv.cfg : Unsure.
+- requirements.txt : Libraries needed to run on a server.
+- checkboxdict.txt : what the checkbox selection in the app means.
 - README.md : Yer lookin' at it.
 # Files
 Within the NM folders, there are:
 - Include : Unsure.
+- _pyache_ : compiled python files.
 - json : The GeoJSON of events is in this folder, events.geojson. 
 - Lib : Necessary libraries.
 - scripts : Python scripts to handle venv, activate, and the original scripts for creating the GeoJSON and SQL, and pip. The update.events.ipynb will pull the JSONBIN.io API and update a geoJSON locally. The create.sql.ipynb can then be used to overwrite the SQL file to update it.
