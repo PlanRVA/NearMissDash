@@ -13,7 +13,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-       <!-- bootstrap -->
+    <!-- bootstrap -->
     <!-- necessary for  ?-->
     <link rel="stylesheet" href="/static/bootstrap-slider/css/bootstrap-slider.min.css">
     <!-- necessary for ? -->
@@ -26,10 +26,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- necessary for  navbar to toggle on mobile -->
     <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap JS, Popper.js, and jQuery -- Necessary for Navbar? -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
     <style>
         body, .navbar, .navbar-brand, .nav-link, button {
@@ -63,7 +59,8 @@
         </div>
     </nav>
 
-        
+    <!-- reusing the map main container here because it is the right size -->
+    <div class = "map-main-container"> 
         <h3>Helpful Definitions</h3>
         <br>
         <h6>
@@ -76,9 +73,11 @@
             Unsafe conditions are structural or environmental conditions that are likely to cause a crash.
             Some examples of unsafe conditions are: locations lacking a sidewalk or bike lane, items blocking the sidewalk or bike lane, potholes, debris in roadway, or poor visibility.
         </h6>
+    </div>    
         <!-- bike image -->
         <img src="{{url_for('static', filename='bike.png') }}" alt=""> 
         <br>
+        
       <!--  <img src="{{url_for('static', filename='examples1.png') }}" alt="Examples">-->
 <!-- footer -->
 <div class="footer">
