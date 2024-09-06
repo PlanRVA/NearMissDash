@@ -22,7 +22,7 @@ app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
 JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A2y'
-JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
+JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42'
 
 #tell flask to read home page
 @app.route('/')
@@ -65,12 +65,11 @@ def add_feature():
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
 
     # Add the new feature to the existing data
-    data = response.json().get('record', {})
+    data = response.json()['record']
     data['features'].append(new_feature)
 
     # Update the JSONBin with the new data
-    updated_data = {'record': data}
-    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=updated_data)
+    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
 
     if update_response.status_code == 200:
         return jsonify(update_response.json()), 200
