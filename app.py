@@ -23,6 +23,7 @@ app.config['SECRET_KEY'] = 'greenstreets'
 #setup JSONBin.io 
 JSONBIN_ACCESS_KEY = '$2a$10$7B8tVje037JkjFrFjBuXauoSw5x7XdSVhSL2KfUqm7XfcNSOhQ8ae'
 JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
+COLLECTION_ID = '66cccc04ad19ca34f89b5f08'
 BIN_ID = '66db2f75ad19ca34f8a0f264'
 
 #tell flask to read home page
@@ -52,12 +53,14 @@ def dashboard():
 
 
 #Tell Flask to create a record
+#Tell Flask to create a record
 @app.route('/add-feature', methods=['POST'])
 def add_feature():
     new_data = request.json  # Get the new feature from the request body
     # Fetch the current data from JSONBin
     headers = {
-        'X-Master-Key': JSONBIN_ACCESS_KEY
+        'X-Master-Key': JSONBIN_ACCESS_KEY,
+        'X-Collection-Id': COLLECTION_ID
     }
     url = f'https://api.jsonbin.io/v3/b/{BIN_ID}/latest'
     response = requests.get(url, headers=headers)
@@ -68,6 +71,7 @@ def add_feature():
         # Update the bin with the new data
         update_url = f'https://api.jsonbin.io/v3/b/{BIN_ID}'
         update_response = requests.put(update_url, headers=headers, json=bin_data)
+
 #Tell Flask how to read bin
 @app.route('/get-map-data',  methods=['GET'])
 def get_map_data():
