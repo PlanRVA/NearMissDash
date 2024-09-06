@@ -59,6 +59,7 @@ def add_feature():
     # Fetch the current data from JSONBin
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
+        'Content-Type': 'application/json'
     }
     response = requests.get(JSONBIN_API_URL, headers=headers)
 
