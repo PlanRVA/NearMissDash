@@ -65,11 +65,12 @@ def add_feature():
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
 
     # Add the new feature to the existing data
-    data = response.json()['record']
+    data = response.json().get('record', {})
     data['features'].append(new_feature)
 
     # Update the JSONBin with the new data
-    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
+    updated_data = {'record': data}
+    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=updated_data)
 
     if update_response.status_code == 200:
         return jsonify(update_response.json()), 200
