@@ -51,31 +51,23 @@ def dashboard():
     return render_template('dashboard.html')
 
 
-#tell flask how to add event to JSONBin
+#Tell Flask to create a record
 @app.route('/add-feature', methods=['POST'])
 def add_feature():
-    new_feature = request.json  # Get the new feature from the request body
-    
+    new_data = request.json  # Get the new feature from the request body
     # Fetch the current data from JSONBin
     headers = {
-        'X-Master-Key': JSONBIN_ACCESS_KEY,
+        'X-Master-Key': JSONBIN_ACCESS_KEY
     }
-    response = requests.get(JSONBIN_API_URL, headers=headers)
-
-    if response.status_code != 200:
-        return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
-
-    # Add the new feature to the existing data
-    data = response.json()['record']
-    data['features'].append(new_feature)
-
-    # Update the JSONBin with the new data
-    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
-
-    if update_response.status_code == 200:
-        return jsonify(update_response.json()), 200
-    else:
-        return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
+    url = f'https://api.jsonbin.io/v3/b/{BIN_ID}/latest'
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        bin_data = response.json()
+        # Add the new feature to the features array
+        bin_data['record']['features'].append(new_data)
+        # Update the bin with the new data
+        update_url = f'https://api.jsonbin.io/v3/b/{BIN_ID}'
+        update_response = requests.put(update_url, headers=headers, json=bin_data)
 #Tell Flask how to read bin
 @app.route('/get-map-data',  methods=['GET'])
 def get_map_data():
