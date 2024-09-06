@@ -85,7 +85,13 @@ def get_map_data():
     response = requests.get(JSONBIN_API_URL, headers=headers)
 
     if response.status_code == 200:
-        return jsonify(response.json()), 200
+        data = response.json()
+        # Extract the actual GeoJSON data from the "record" key
+        if 'record' in data:
+            geojson_data = data['record']
+            return jsonify(geojson_data), 200
+        else:
+            return jsonify({'error': 'Unexpected data format from JSONBin'}), 500
     else:
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
 

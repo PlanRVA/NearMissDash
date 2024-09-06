@@ -218,16 +218,7 @@
                 layer.bindPopup(popupContent);
             }
         }
-        // Fetch GeoJSON data from '/get-map-data' - backup section to revert to if icons are not working
-        //fetch('/get-map-data')
-        //    .then(response => response.json())
-        //    .then(data => {
-                // Add GeoJSON data to the map
-        //        L.geoJSON(data.record).addTo(map);
-        //    })
-        //.catch(error => {
-        //    console.error('Error fetching map data:', error);
-        //});
+
 
          // Fetch GeoJSON data from '/get-map-data'
         fetch('/get-map-data')
@@ -248,16 +239,13 @@
                     },
                     onEachFeature: onEachFeature // the popup
                 }).addTo(map);
-
-                // for the charts
-                const reportTypeTotals = calculateTotals(data.record);
-                const eventTypeTotals = calculateTotals(data.record);
-
             })
             .catch(error => {
                 console.error('Error fetching map data:', error);
             });
 
+
+            
         // function necessary to get icons to match on the data
         function getIconClass(reportType) {
             switch(reportType) {
