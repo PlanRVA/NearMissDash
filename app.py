@@ -23,6 +23,7 @@ app.config['SECRET_KEY'] = 'greenstreets'
 #setup JSONBin.io 
 JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A2y'
 JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42'
+JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
 
 #tell flask to read home page
 @app.route('/')
@@ -81,7 +82,7 @@ def get_map_data():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
-    response = requests.get(JSONBIN_API_URL, headers=headers)
+    response = requests.get(JSONBIN_API_URL2, headers=headers)
 
     if response.status_code == 200:
         data = response.json()
