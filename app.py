@@ -22,7 +22,8 @@ app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
 JSONBIN_ACCESS_KEY = '$2a$10$7B8tVje037JkjFrFjBuXauoSw5x7XdSVhSL2KfUqm7XfcNSOhQ8ae'
-JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66ce2fe9e41b4d34e42626f8'
+JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
+BIN_ID = '66db2f75ad19ca34f8a0f264'
 
 #tell flask to read home page
 @app.route('/')
