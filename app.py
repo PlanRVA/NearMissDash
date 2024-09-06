@@ -21,9 +21,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
-JSONBIN_ACCESS_KEY = '$2a$10$7B8tVje037JkjFrFjBuXauoSw5x7XdSVhSL2KfUqm7XfcNSOhQ8ae'
+JSONBIN_ACCESS_KEY = '$2a$10$DoSeF46ocbzkukvN8pouUuKxtQ4I/zyRh5ysNFC5xBtpwB0KjLvT.'
 JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
-BIN_ID = '66db2f75ad19ca34f8a0f264'
 
 #tell flask to read home page
 @app.route('/')
@@ -59,7 +58,6 @@ def add_feature():
     # Fetch the current data from JSONBin
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
-        'Content-Type': 'application/json'
     }
     response = requests.get(JSONBIN_API_URL, headers=headers)
 
