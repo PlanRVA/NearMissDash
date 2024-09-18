@@ -66,24 +66,18 @@ def add_feature():
         return jsonify(update_response.json()), 200
     else:
         return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
-#Tell Flask how to read bin
+#Tell Flask how to read bin - map on dashboard page
 @app.route('/get-map-data',  methods=['GET'])
 def get_map_data():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
-    response = requests.get(JSONBIN_API_URL2, headers=headers)
+    response = requests.get(JSONBIN_API_URL, headers=headers)
 
     if response.status_code == 200:
-        data = response.json()
-        # Extract the actual GeoJSON data from the "record" key
-        if 'feature' in data:
-            geojson_data = data['feature']
-            return jsonify(geojson_data), 200
-        else:
-            return jsonify({'error': 'Unexpected data format from JSONBin'}), 500
+        return jsonify(response.json())
     else:
-        return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
+        return jsonify({"error": "Failed to fetch data"}), 500
 
 
 #tell flask run app

@@ -226,19 +226,20 @@
             .then(data => {
 
                 // Add GeoJSON data to the map with custom icons
-                L.geoJSON(data.record, {
-                    pointToLayer: function(feature, latlng) {
-                        // Determine the appropriate icon based on the report type
-                        var reportType = feature.properties.report_type;
-                        var eventType = feature.properties.event_type;
-                        var icon = L.divIcon({ 
-                            html: '<i class="bi bi-geo-alt-fill custom-icon ' + getIconClass(reportType) + '"></i>', 
-                        });
-                        
-                        return L.marker(latlng, { icon: icon });
-                    },
-                    onEachFeature: onEachFeature // the popup
-                }).addTo(map);
+                data.record.features.forEach(function(feature) {
+                    var lng = feature.geometry.coordinates[0];
+                    var lat = feature.geometry.coordinates[1];
+
+                    // Determine the appropriate icon based on the report type
+                    var reportType = feature.properties.report_type;
+                    var icon = customIcons[reportType] || customIcons["Collision"]; // Default to Collision icon if none found
+
+                    // Add marker to the map with the custom icon
+                    L.marker([lat, lng], { icon: icon })
+                        .bindPopup(`<strong>Report Type:</strong> ${reportType}<br>
+                                    <strong>Date and Time:</strong> ${formatDateTime(feature.properties.datetime)}`)
+                        .addTo(map);
+                });
             })
             .catch(error => {
                 console.error('Error fetching map data:', error);
