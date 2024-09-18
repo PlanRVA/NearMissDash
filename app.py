@@ -30,16 +30,6 @@ JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
 def index(): 
     return render_template('apphome.html')
 
-#tell flask to read about page
-#@app.route('/about')
-#def about(): 
-    #return render_template('about.html')
-
-#tell flask to read contact page
-#@app.route('/contact')
-#def conact(): 
-    #return render_template('contact.html')
-
 #tell flask to read defs page
 @app.route('/defs')
 def defs(): 
@@ -60,7 +50,7 @@ def add_feature():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
-    response = requests.get(JSONBIN_API_URL, headers=headers)
+    response = requests.get(JSONBIN_API_URL2, headers=headers)
 
     if response.status_code != 200:
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
@@ -70,7 +60,7 @@ def add_feature():
     data['features'].append(new_feature)
 
     # Update the JSONBin with the new data
-    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
+    update_response = requests.put(JSONBIN_API_URL2, headers=headers, json=data)
 
     if update_response.status_code == 200:
         return jsonify(update_response.json()), 200
