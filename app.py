@@ -22,8 +22,8 @@ app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
 JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A2y'
-JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42'
-JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264'
+JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42' # BIN
+JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264' # Events
 
 #tell flask to read home page
 @app.route('/')
@@ -50,7 +50,7 @@ def add_feature():
     headers = {
         'X-Master-Key': JSONBIN_ACCESS_KEY,
     }
-    response = requests.get(JSONBIN_API_URL2, headers=headers)
+    response = requests.get(JSONBIN_API_URL, headers=headers)
 
     if response.status_code != 200:
         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
@@ -60,7 +60,7 @@ def add_feature():
     data['features'].append(new_feature)
 
     # Update the JSONBin with the new data
-    update_response = requests.put(JSONBIN_API_URL2, headers=headers, json=data)
+    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
 
     if update_response.status_code == 200:
         return jsonify(update_response.json()), 200
@@ -77,8 +77,8 @@ def get_map_data():
     if response.status_code == 200:
         data = response.json()
         # Extract the actual GeoJSON data from the "record" key
-        if 'record' in data:
-            geojson_data = data['record']
+        if 'feature' in data:
+            geojson_data = data['feature']
             return jsonify(geojson_data), 200
         else:
             return jsonify({'error': 'Unexpected data format from JSONBin'}), 500
