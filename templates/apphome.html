@@ -63,27 +63,45 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="/">Home</a>
                 <a class="nav-link" href="/dashboard">Dashboard</a>
-                <a class="nav-link" href="/defs">Helpful Definitions</a>
-                <a class="nav-link" href="https://planrva.org/">About PlanRVA</a>
+                <a class="nav-link" href="/defs">About the NM Dashboard</a>
+                <a class="nav-link" target="_blank" href="https://planrva.org/">About PlanRVA</a>
             </div>
         </div>
     </nav>
    
-    
+    <!-- begin alert message -->
+    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+        <h4>Welcome!</h4>
+        <h5>
+        Place a marker on the map to submit an event.
+        <br>
+        Use the pin to access your current location.
+        </h5>
+        <br>
+        <br>
+        <h6>
+        If you were involved in a crash, please report it to your local law enforcement.
+        If you were involved in a crash and are injured, please seek immediate medical attention.
+        </h6>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="popupclose">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <!-- end alert message -->
 
 
 
-    <!-- begin map and initial buttons -->
+    <!-- begin map -->
     <div class = "map-main-container"> 
         <div id="map"></div>
     </div>
-    <div id="center">
+    <!--<div id="center">
         <button type="button" id="startReportButton" class="btn btn-default btn-md">
             <span class= "bi bi-geo-alt-fill" aria-hidden="true">
             </span> Start a Report</button>
-    </div>
+    </div>-->
     
-    <!-- end map and initial buttons -->
+    <!-- end map -->
 
 
     <!-- begin modal form -->
@@ -305,9 +323,9 @@
         });
 
         // Place the example marker with a popup
-        L.marker([37.54679001050363, -77.45031004048063], { icon: customIcon }).addTo(map)
-            .bindPopup('Record an event.')
-            .openPopup();
+        //L.marker([37.54679001050363, -77.45031004048063], { icon: customIcon }).addTo(map)
+        //    .bindPopup('Record an event.')
+        //    .openPopup();
             
 
         // Add the Locate control with a custom icon
@@ -368,9 +386,9 @@
         }
 
         // functions to initiate drawing
-        document.getElementById('startReportButton').onclick = function () {
+        document.getElementById('popupclose').onclick = function () {
             startDrawing(); 
-            document.getElementById('startReportButton').style.display = 'inline';
+            document.getElementById('popupclose').style.display = 'inline';
             document.getElementById('map').classList.add('custom-icon-cursor');
         };
 
