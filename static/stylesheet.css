@@ -114,10 +114,22 @@ li a:hover {
 
 
 
-
-
-
-
+/* start Welcome message ! hover */
+.alert {
+    width: 50%; /* Adjust the width as necessary */
+    height: auto; /* Adjust height as necessary */
+    border: none; /* Removes border */
+    padding: 20px;
+    text-align: center; /* Center the text inside */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow to the alert */
+    border-radius: 5px;
+    z-index: 9999;
+}
+.alert-dismissible .btn-close {
+    position: absolute;
+    bottom: 10px; /* set close button to the bottom */
+    right: 10px;
+}
 
 
 
@@ -307,7 +319,7 @@ a:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Style side by side images */
+/* Style side by side images - currently not used */
 .column {
     float: left;
     width: 33.33%;
@@ -328,7 +340,7 @@ a:hover {
     padding: 5px;
   }
 
-/* Style for contact form */
+/* Style for contact form - currently not used */
 .container {
     width: 800px;
     margin: 0 auto;
