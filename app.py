@@ -38,7 +38,16 @@ def defs():
 #tell flask to read dashboard page
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+# Read content of plot1.html
+    with open("plot1.html", "r") as f:
+        plot1_html = f.read()
+    
+    # Read content of plot2.html
+    with open("plot2.html", "r") as f:
+        plot2_html = f.read()
+    
+    # Pass both plots to the template
+    return render_template("dashboard.html", plot1_html=plot1_html, plot2_html=plot2_html)
 
 
 #tell flask how to add event to JSONBin
