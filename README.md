@@ -11,6 +11,7 @@ Live Dashboard Page: https://nearmissrva.onrender.com/
 - pyenv.cfg : Unsure.
 - requirements.txt : Libraries needed to run on a server.
 - checkboxdict.txt : what the checkbox selection in the app means.
+- bokeh1.py, bokeh2.py, plot1.html and plot2.html are for making plots on the dashboard page.
 - README.md : Yer lookin' at it.
 # Files
 Within the NM folders, there are:
