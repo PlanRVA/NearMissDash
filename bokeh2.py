@@ -42,7 +42,7 @@ pie_data_2['color'] = pie_data_2['event_type'].map(custom_colors)
 pie_data_2['custom_label'] = ["Collision with Stationary Object or Vehicle", "Collision with Moving Object or vehicle", "Near Miss with Stationary Object or Vehicle", "Near Miss with Moving Object or Vehicle", "Unsafe Condition or Location"]
 
 # Pie chart 2: Based on 'event_type'
-p2 = figure(height=350, title="Submissions by Event Type", toolbar_location="right",
+p2 = figure(height=300, title="Submissions by Event Type", toolbar_location="right",
             tools="hover, reset, save", tooltips="@event_type: @value", x_range=(-0.5, 1.0))
 
 p2.wedge(x=0, y=1, radius=0.2,

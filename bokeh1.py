@@ -40,10 +40,10 @@ pie_data_1['angle'] = pie_data_1['value']/pie_data_1['value'].sum() * 2 * pi
 pie_data_1['color'] = pie_data_1['report_type'].map(custom_colors)
 
 # Pie chart 1
-p1 = figure(height=350, title="Submissions by Report Type", toolbar_location="right",
+p1 = figure(height=300, title="Submissions by Report Type", toolbar_location="right",
             tools="hover, reset, save", tooltips="@report_type: @value", x_range=(-0.5, 1.0))
 
-p1.wedge(x=0, y=1, radius=0.4,
+p1.wedge(x=0, y=1, radius=0.3,
          start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
          line_color="white", fill_color='color', legend_field='report_type', source=pie_data_1)
 
