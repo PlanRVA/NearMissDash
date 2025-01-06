@@ -83,7 +83,7 @@
         }
         .map-container {
             width: 500px;  /* Adjust width as needed */
-            margin: 20px auto;
+           /* margin: 20px auto; */
         }
         #map {
             height: 600px; /* must stay like this */
@@ -100,7 +100,6 @@
         }
         .chart-container {
             height: 300px; /* must be half of map height */
-            width: 300px;  /* Adjust width as needed */
             position: relative;
             border: none #dddddd;
         }
@@ -137,23 +136,16 @@
 
         <!-- map and chart in bootstrap setup-->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
                     <!-- map -->
                     <div class = "map-container">
                         <div id="map"></div>
-                    </div>
-                </div>   
-                <div class="col-md-6"> 
-                    <!-- charts -->
+                    </div> 
+                    <!-- Chart Section -->  
                     <div class="chart-container"> 
-                        <canvas id="pieChart1"></canvas>
-                    </div>
-                    <div class="chart-container"> 
-                        <canvas id="pieChart2"></canvas>
-                    </div>
-                </div>
-            </div>
+                        <!-- charts -->
+                        {{ plot1_html | safe }}
+                            <br>
+                        {{ plot2_html | safe }}
         </div>
         <br>
         <!-- Bootstrap -->
@@ -253,80 +245,7 @@
             }
         }
 
-        // setup data for pie charts
-        const pie_data = {
-             labels: ['Collision', 'Near Miss', 'Dangerous Location'],
-             datasets: [{
-                 data: [5, 10, 6],
-                 backgroundColor: ['#C84107', '#EE810E', '#FBB92C'],
-             }]
-         };
-         const pie2_data = {
-             labels: [
-                 'Collision with Stationary Object or Vehicle',
-                 'Collision with Moving Object or vehicle',
-                 'Near Miss with Stationary Object or Vehicle',
-                 'Near Miss with Moving Object or Vehicle',
-                 'Unsafe Condition or Location'],
-                 datasets: [{
-                 data: [5, 8, 6, 9, 4],
-                 backgroundColor: ['#C84107', '#E96830', '#EE810E', '#F9A64F', '#FBB92C'],
-             }]
-         };
-        
-         // setup data pie charts
-         const config1 = {
-             type: 'pie',
-             data: pie_data,
-             options: {
-                title: {
-                    display: true,
-                    text: "Reports Submitted"
-                },
-                 responsive: true,
-                 plugins: {
-                    legend: {
-                         position: 'left',
-                         align: 'start'
-                     },
-                    tooltip: {
-                         callbacks: {
-                             label: function(context) {
-                                 return `${context.label}: ${context.raw}`;
-                             }
-                         }
-                     }
-                 }
-             }
-         };
-         const config2 = {
-             type: 'pie',
-             data: pie2_data,
-             options: {
-                title: {
-                    display: true,
-                    text: "Event Types Submitted"
-                    },
-                 responsive: true,
-                 plugins: {
-                     legend: {
-                         position: 'top',
-                     },
-                     tooltip: {
-                         callbacks: {
-                             label: function(context) {
-                                 return `${context.label}: ${context.raw}`;
-                             }
-                         }
-                     }
-                 }
-             }
-         };
-
-         const ctx1 = document.getElementById('pieChart1').getContext('2d');
-         const pieChart1 = new Chart(ctx1, config1);
-         const ctx2 = document.getElementById('pieChart2').getContext('2d');
-         const pieChart2 = new Chart(ctx2, config2);
+    
 
 
 
