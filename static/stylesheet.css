@@ -299,6 +299,13 @@ h6 {
     text-align: left;
     position:relative
 }
+h7 {
+    color: #3c3b3b;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+    position:relative
+}
 .padded-text {
     padding: 10px; /* Adds padding around the text */
 }

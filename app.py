@@ -21,72 +21,78 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'greenstreets'
 
 #setup JSONBin.io 
-JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A2y'
-JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42' # BIN
-JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264' # Events
+# JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A2y'
+# JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42' # BIN
+# JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264' # Events
 
-#tell flask to read home page
+#tell flask to read temporary home page
 @app.route('/')
 def index(): 
-    return render_template('apphome.html')
+    return render_template('temporary_home.html')
+
+
+# #tell flask to read home page
+# @app.route('/')
+# def index(): 
+#     return render_template('apphome.html')
 
 #tell flask to read defs page
-@app.route('/defs')
-def defs(): 
-    return render_template('defs.html')
+# @app.route('/defs')
+# def defs(): 
+#     return render_template('defs.html')
 
 #tell flask to read dashboard page
-@app.route('/dashboard')
-def dashboard():
-# Read content of plot1.html
-   # with open("plot1.html", "r") as f:
-    #    plot1_html = f.read()
+# @app.route('/dashboard')
+# def dashboard():
+# # Read content of plot1.html
+#    # with open("plot1.html", "r") as f:
+#     #    plot1_html = f.read()
     
-    # Read content of plot2.html
-    #with open("plot2.html", "r") as f:
-    #    plot2_html = f.read()
+#     # Read content of plot2.html
+#     #with open("plot2.html", "r") as f:
+#     #    plot2_html = f.read()
     
-    # Pass both plots to the template
-    return render_template("dashboard.html")
+#     # Pass both plots to the template
+#     return render_template("dashboard.html")
 
 
 #tell flask how to add event to JSONBin
-@app.route('/add-feature', methods=['POST'])
-def add_feature():
-    new_feature = request.json  # Get the new feature from the request body
+# @app.route('/add-feature', methods=['POST'])
+# def add_feature():
+#     new_feature = request.json  # Get the new feature from the request body
     
-    # Fetch the current data from JSONBin
-    headers = {
-        'X-Master-Key': JSONBIN_ACCESS_KEY,
-    }
-    response = requests.get(JSONBIN_API_URL, headers=headers)
+#     # Fetch the current data from JSONBin
+#     headers = {
+#         'X-Master-Key': JSONBIN_ACCESS_KEY,
+#     }
+#     response = requests.get(JSONBIN_API_URL, headers=headers)
 
-    if response.status_code != 200:
-        return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
+#     if response.status_code != 200:
+#         return jsonify({'error': 'Failed to fetch data from JSONBin.io'}), response.status_code
 
-    # Add the new feature to the existing data
-    data = response.json()['record']
-    data['features'].append(new_feature)
+#     # Add the new feature to the existing data
+#     data = response.json()['record']
+#     data['features'].append(new_feature)
 
-    # Update the JSONBin with the new data
-    update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
+#     # Update the JSONBin with the new data
+#     update_response = requests.put(JSONBIN_API_URL, headers=headers, json=data)
 
-    if update_response.status_code == 200:
-        return jsonify(update_response.json()), 200
-    else:
-        return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
-#Tell Flask how to read bin - map on dashboard page
-@app.route('/get-map-data',  methods=['GET'])
-def get_map_data():
-    headers = {
-        'X-Master-Key': JSONBIN_ACCESS_KEY,
-    }
-    response = requests.get(JSONBIN_API_URL, headers=headers)
+#     if update_response.status_code == 200:
+#         return jsonify(update_response.json()), 200
+#     else:
+#         return jsonify({'error': 'Failed to update data in JSONBin.io'}), update_response.status_code
+# #Tell Flask how to read bin - map on dashboard page
+# @app.route('/get-map-data',  methods=['GET'])
+# def get_map_data():
+#     headers = {
+#         'X-Master-Key': JSONBIN_ACCESS_KEY,
+#     }
+#     response = requests.get(JSONBIN_API_URL, headers=headers)
 
-    if response.status_code == 200:
-        return jsonify(response.json())
-    else:
-        return jsonify({"error": "Failed to fetch data"}), 500
+#     if response.status_code == 200:
+#         return jsonify(response.json())
+#     else:
+#         return jsonify({"error": "Failed to fetch data"}), 500
 
 
 #tell flask run app
