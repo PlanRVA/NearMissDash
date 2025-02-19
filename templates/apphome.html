@@ -267,8 +267,8 @@
                     <br>
                     <br>
                     <!-- date and time picker -->
-                        <label for="event_datetime">Date and Time:</label>
-                        <input type="datetime-local" id="event_datetime" name="event_datetime" required>
+                        <label for="event_datetime" class="form-label">Date and Time:</label>
+                        <input type="datetime-local" id="event_datetime" name="event_datetime" class="form-control" required>
                         <!-- hidden lat and long -->
                         <input type="hidden" id="latitude" name="latitude">
                         <input type="hidden" id="longitude" name="longitude">
@@ -424,6 +424,20 @@
         document.getElementById('coordinateModal').style.display = 'none';
         }
 
+
+        // functions for form validations and logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const dateTimeInput = document.getElementById("event_datetime");
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, "0");
+            const day = String(now.getDate()).padStart(2, "0");
+            const hours = String(now.getHours()).padStart(2, "0");
+            const minutes = String(now.getMinutes()).padStart(2, "0");
+
+            // Set max attribute to current date and time (prevents future selection)
+            dateTimeInput.setAttribute("max", `${year}-${month}-${day}T${hours}:${minutes}`);
+        });
 
         // function to shape the data for the geojson and submit the form
         function submitForm() {
