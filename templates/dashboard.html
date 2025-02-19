@@ -16,6 +16,7 @@
     <!-- necessary for map to render in right spot -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
 
+
     <!-- bootstrap -->
     <!-- necessary for  ?-->
     <link rel="stylesheet" href="/static/bootstrap-slider/css/bootstrap-slider.min.css">
@@ -33,6 +34,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- necessary for map screenshot-->
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
 
     <style>
         body, .navbar, .navbar-brand, .nav-link, button {
@@ -159,7 +162,9 @@
         <!-- Bootstrap -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <!-- leaflet and leaflet plugins-->
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>
+        <!-- necessary for map screenshot-->
+        <script src="https://unpkg.com/leaflet-image/leaflet-image.js"></script>
         <!-- Popper -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
         <!-- Chart -->
@@ -177,6 +182,19 @@
             zoomOffset: -1,
             attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>'
         }).addTo(map);
+
+        leafletImage(map, function(err, canvas) {
+            // now you have canvas
+            // example thing to do with that canvas:
+            var img = document.createElement('img');
+            var dimensions = map.getSize();
+            img.width = dimensions.x;
+            img.height = dimensions.y;
+            img.src = canvas.toDataURL();
+            document.getElementById('images').innerHTML = '';
+            document.getElementById('images').appendChild(img);
+        });
+
         // defining custom icons based on report type, custom icons class name from CSS
         var customIcons = {
             "Collision": L.divIcon({ 
@@ -252,6 +270,7 @@
                 case "Dangerous Location": return "icon-yellow";
             }
         }
+
 
         // setup data for pie charts
         const pie_data = {
