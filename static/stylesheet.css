@@ -116,18 +116,28 @@ li a:hover {
 
 /* start Welcome message ! hover */
 .alert {
-    width: 50%; /* Adjust the width as necessary */
-    height: auto; /* Adjust height as necessary */
-    border: none; /* Removes border */
+    position: fixed; /* Ensures the alert is centered on the viewport */
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px; /* Prevents it from being too wide */
+    height: auto;
+    background: #bdccd4d2; /* Slightly transparent background */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 20px;
-    text-align: center; /* Center the text inside */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow to the alert */
-    border-radius: 5px;
-    z-index: 9999;
+    border: 5px solid #bdccd4d2; /* Small border, same color - for shadow setup */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    z-index: 9999; /* Keeps it on top */
 }
 .alert-dismissible .btn-close {
     position: absolute;
-    bottom: 10px; /* set close button to the bottom */
+    top: 10px; /* set close button to the top*/
     right: 10px;
 }
 
