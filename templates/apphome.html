@@ -429,19 +429,19 @@
             const eventType2 = document.getElementById("eventType2");
             
             const options = {
-                Collision: ["Collision1", "Collision2"],
+                "Collision": ["Collision1", "Collision2"],
                 "Near Miss": ["Miss1", "Miss2"],
                 "Dangerous Location": ["Unsafe"]
             };
             
+            const allOptions = Array.from(eventType2.options); // Store original options
+    
             eventType.addEventListener("change", function () {
                 const selectedValue = eventType.value;
+        
                 
-                // Store original options
-                const allOptions = Array.from(eventType2.options);
-                
-                // Reset second dropdown
-                eventType2.innerHTML = '<option value selected>---------</option>';
+                // Reset second dropdown to contain only relevant options
+                eventType2.innerHTML = '';
                 
                 // If a valid selection is made, filter options
                 if (options[selectedValue]) {
