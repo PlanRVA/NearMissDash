@@ -160,7 +160,7 @@
                             <option value selected>---------</option>
                             <option value="No Inury">No Injury</option>
                             <option value="Medical Treatment Not Reguired">Yes, Medical Treatment Not Required</option>
-                            <option value="Medical Treament Required">Yes, Medical Treatment Required</option>
+                            <option value="Medical Treatment Required">Yes, Medical Treatment Required</option>
                             <option value="Witness">No, Witnessed Event</option>
                         </select>
                     <br>
@@ -203,7 +203,7 @@
                     </div>
                     <br>
                     <br>
-                    <!-- checkboxes unsafe behaviors -->
+                    <!-- checkboxes unsafe conditions -->
                     <div class="modal-body mt-0">
                         <label>Were there any unsafe conditions? Select all that apply.</label></toggle>
                             <div class="custom-control custom-checkbox">
@@ -232,7 +232,7 @@
                             </div>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" name="loc7" id="loc7" value="loc7">
-                                <label class="custom-control-label" for="loc7">Poor Visibliity - poor sightlines</label>
+                                <label class="custom-control-label" for="loc7">Poor Visibility - poor sightlines</label>
                             </div>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" name="loc8" id="loc8" value="loc8">
@@ -423,6 +423,37 @@
         document.getElementById('coordinateModal').classList.add('closed');
         document.getElementById('coordinateModal').style.display = 'none';
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const eventType = document.getElementById("eventType");
+            const eventType2 = document.getElementById("eventType2");
+            
+            const options = {
+                Collision: ["Collision1", "Collision2"],
+                "Near Miss": ["Miss1", "Miss2"],
+                "Dangerous Location": ["Unsafe"]
+            };
+            
+            eventType.addEventListener("change", function () {
+                const selectedValue = eventType.value;
+                
+                // Store original options
+                const allOptions = Array.from(eventType2.options);
+                
+                // Reset second dropdown
+                eventType2.innerHTML = '<option value selected>---------</option>';
+                
+                // If a valid selection is made, filter options
+                if (options[selectedValue]) {
+                    options[selectedValue].forEach(value => {
+                        const option = allOptions.find(opt => opt.value === value);
+                        if (option) {
+                            eventType2.appendChild(option.cloneNode(true));
+                        }
+                    });
+                }
+            });
+        });
 
 
         // functions for form validations and logic
