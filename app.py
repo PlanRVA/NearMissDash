@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_json import FlaskJSON, JsonError, json_response
 from flask_mail import Mail, Message 
 import folium
-from IPython.display import HTML, display
+# from IPython.display import HTML, display
 import json
 import pandas as pd
 import numpy as np
@@ -15,7 +15,7 @@ from collections import Counter
 import io
 import smtplib
 from email.mime.text import MIMEText
-from waitress import serve
+# from waitress import serve
 import requests
 import sqlite3
 import urllib.request
