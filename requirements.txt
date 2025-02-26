@@ -1,5 +1,6 @@
 # virtualenv==20.25.1
 Flask==2.2.5
+gunicorn==20.1.0
 email_validator==2.1.1
 numpy
 pandas
@@ -26,7 +27,6 @@ Bootstrap-Flask==2.3.3
 # django-leaflet==0.30.1
 dnspython==2.6.1
 waitress==3.0.0
-gunicorn==20.1.0
 requests==2.31.0
 plotly==5.16.1
 bokeh==3.2.1
