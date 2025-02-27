@@ -10,10 +10,10 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port 8080 for AWS EB
-EXPOSE 8080
+EXPOSE 5007
 
 # # Start Gunicorn server for deployment
-# CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "application:app"]
+# CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5007", "application:app"]
 
 # Start Gunicorn server in localhost
 CMD ["gunicorn", "-w", "4", "-b", "localhost:5007", "application:app"]
