@@ -16,4 +16,4 @@ EXPOSE 8080
 # CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "application:app"]
 
 # Start Gunicorn server in localhost
-CMD ["gunicorn", "-w", "4", "-b", "localhost:8080", "application:app"]
+CMD ["gunicorn", "-w", "4", "-b", "localhost:5007", "application:app"]
