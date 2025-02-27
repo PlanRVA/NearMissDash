@@ -7,4 +7,5 @@ venv/
 pyvenv.cfg
 *.md
 .gitattributes
+app_in_render.py
 
