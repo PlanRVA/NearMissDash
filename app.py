@@ -29,10 +29,15 @@ JSONBIN_ACCESS_KEY = '$2a$10$J23yWei2a5JsxL9JkiWOXuZsgZ.qR/GRj74Jre.4i/Te3XjaT0A
 JSONBIN_API_URL = f'https://api.jsonbin.io/v3/b/66db5907acd3cb34a87f7d42' # BIN
 JSONBIN_API_URL2 = f'https://api.jsonbin.io/v3/b/66db2f75ad19ca34f8a0f264' # EVENTS
 
-#tell flask to read home page
+#tell flask to read temporary home page
 @app.route('/')
 def index(): 
-    return render_template('apphome.html')
+    return render_template('temporary_home.html')
+
+# #tell flask to read home page
+# @app.route('/')
+# def index(): 
+#     return render_template('apphome.html')
 
 #tell flask to read defs page
 @app.route('/defs')
