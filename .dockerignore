@@ -1,0 +1,10 @@
+__pycache__
+*.pyc
+venv/
+.env
+.git
+*.ipynb
+pyvenv.cfg
+*.md
+.gitattributes
+
