@@ -1,0 +1,2813 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.49067584593722,
+          37.56671860507549
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 1,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Delivery driver blindly stepped into bike lane ROW",
+        "datetime": "2025-01-20T16:07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.52551642829444,
+          37.57578517449264
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "School drop off, no protection for bike/ped",
+        "datetime": "2025-01-07T07:35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4774284306546,
+          37.560960968908745
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Witness",
+        "injury_type": "Witness",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Driver nearly struck ped in street, inches away",
+        "datetime": "2025-01-28T17:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45034939986849,
+          37.539160139141956
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Near miss with a cyclist going the wrong way",
+        "datetime": "2025-02-04T22:38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4528645360366,
+          37.539142674631144
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 1,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Constant near misses and speeding",
+        "datetime": "2025-02-09T09:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4765384956267,
+          37.55074599916133
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Poor vis - cars turn right from Pkwd -> AA Blvd",
+        "datetime": "2025-02-14T09:45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.44772049730082,
+          37.520106251257225
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars go fast, pedestrians struggle to cross safely",
+        "datetime": "2025-02-04T12:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45715756948938,
+          37.542038820855055
+        ]
+      },
+      "properties": {
+        "report_type": "Collision",
+        "event_type": "Collision2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Car didn't stop at the stop sign",
+        "datetime": "2025-02-03T18:50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45565929893834,
+          37.5420402635185
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars exciting the highway at high speed don't yiel",
+        "datetime": "2025-02-08T17:03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46064871549608,
+          37.55392153393197
+        ]
+      },
+      "properties": {
+        "report_type": "",
+        "event_type": "",
+        "travel_type": "",
+        "injury_type": "",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Poor visibility + failure of most cars to yield",
+        "datetime": "2025-02-14T08:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48013718094235,
+          37.55012144068079
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "This intersection is horrible. ",
+        "datetime": "2025-02-13T17:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.50394223870853,
+          37.5632939064302
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Unsafe",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "unlawful passers in turnlane can't see pedestrians",
+        "datetime": "2025-02-17T14:10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45724220221184,
+          37.54205079590839
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 1,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Drivers speed and don't stop at the stop sign",
+        "datetime": "2025-02-15T12:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48587079160431,
+          37.56800434119787
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Witness",
+        "injury_type": "Witness",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 1,
+        "text": "Need a stop sign here. Too much Stellas traffic.",
+        "datetime": "2025-02-17T16:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46559958043447,
+          37.545030401172134
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Collision2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 1,
+        "text": "Road is too narrow for two way traffic with cars",
+        "datetime": "2025-02-15T05:55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46559958043447,
+          37.545030401172134
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Collision2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 1,
+        "text": "Road is too narrow for two way traffic with cars",
+        "datetime": "2025-02-15T05:55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46590549049799,
+          37.545148582262904
+        ]
+      },
+      "properties": {
+        "report_type": "",
+        "event_type": "",
+        "travel_type": "",
+        "injury_type": "",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 1,
+        "text": "Not enough space for two cars",
+        "datetime": "2025-02-17T17:35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45729545707096,
+          37.541904151980646
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Collision1",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 1,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Driver had door open in travel lane",
+        "datetime": "2025-02-15T06:37"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45722573346015,
+          37.54203509847429
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Collision2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Drivers don't stop at these stop signs",
+        "datetime": "2025-02-18T16:40"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.72888872206018,
+          37.40090813307608
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 1,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "No crosswalk and speed above 35 so intersection no",
+        "datetime": "2025-02-12T03:47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48642742633821,
+          37.52639634250274
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Bike lane ends into one lane of traffic ",
+        "datetime": "2025-03-06T13:10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48700693734335,
+          37.55937746388635
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 1,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "driver was about to blow thru the red to turn righ",
+        "datetime": "2025-02-28T14:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4923685141776,
+          37.562124523320435
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 1,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "driver would have hit me if i didn't jump back",
+        "datetime": "2025-02-28T13:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.49802521777059,
+          37.564811950940836
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss1",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "most times drivers do not stop for peds in crosswa",
+        "datetime": "2025-02-15T10:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47684658257513,
+          37.55594137081895
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss1",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "driver yelled at me for being in crosswalk",
+        "datetime": "2025-02-08T13:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46061638367763,
+          37.552624199977
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "driver swerved at me bc coming stop sign",
+        "datetime": "2025-02-01T10:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47400879859926,
+          37.51642342328703
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss1",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Gap in bike lane causes frustrated drivers ",
+        "datetime": "2025-03-06T13:27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.49865183621297,
+          37.49020352278095
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss1",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 1,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 1,
+        "loc9": 1,
+        "loc10": 1,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-12T15:27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48432993888856,
+          37.53111854818611
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Lack of safe space for bikes on sidewalk/road ",
+        "datetime": "2025-02-12T13:29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45114564895631,
+          37.528268243582986
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 1,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 1,
+        "loc13": 0,
+        "text": "Need bollards to protect bikers & debris cleaning",
+        "datetime": "2025-03-05T13:31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48746812343599,
+          37.52074206516872
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 1,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars speed in merge lane, needs to be a bike lane.",
+        "datetime": "2025-03-10T13:33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.41713792085649,
+          37.53347953891977
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss1",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-19T13:48"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.41490095853807,
+          37.520469764098294
+        ]
+      },
+      "properties": {
+        "report_type": "Collision",
+        "event_type": "Collision2",
+        "travel_type": "Bicycle",
+        "injury_type": "Medical Treatment Required",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "I was sideswiped by a vehicle while on my bike",
+        "datetime": "2025-03-11T18:50"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.41501932848873,
+          37.52053074827848
+        ]
+      },
+      "properties": {
+        "report_type": "Collision",
+        "event_type": "Collision2",
+        "travel_type": "Bicycle",
+        "injury_type": "Medical Treatment Required",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "I was hit while biking by a vehicle.",
+        "datetime": "2025-03-11T18:47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47080953497637,
+          37.515819218975885
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 1,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "where'd the bike lane go???????????????????",
+        "datetime": "2025-03-13T11:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.44933283031813,
+          37.53343274523484
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "This is such a bad merge",
+        "datetime": "2025-03-13T06:07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47951200956642,
+          37.55407441718996
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Whole Carytown area so dangerous for pedestrians",
+        "datetime": "2025-03-13T15:29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47951200956642,
+          37.55407441718996
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Whole Carytown area so dangerous for pedestrians",
+        "datetime": "2025-03-13T15:29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47951200956642,
+          37.55407441718996
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Whole Carytown area so dangerous for pedestrians",
+        "datetime": "2025-03-13T13:29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46894905733679,
+          37.55170557271503
+        ]
+      },
+      "properties": {
+        "report_type": "Collision",
+        "event_type": "Collision2",
+        "travel_type": "Bicycle",
+        "injury_type": "Medical Treatment Not Reguired",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "I've been hit by a car twice on Strawberry St",
+        "datetime": "2025-03-01T15:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.41183979657757,
+          37.57203180640091
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Drivers aggressive on this road",
+        "datetime": "2025-01-04T15:33"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45071915059995,
+          37.55979845944247
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Twice, driver did not yield, cut me off.",
+        "datetime": "2025-03-08T16:22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47268915176393,
+          37.558416394410614
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-01-13T08:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.50383778370548,
+          37.5902866690671
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-05T12:20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.45399516344128,
+          37.556519734207775
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-17T18:18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4545415755484,
+          37.555890338539704
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-21T18:19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4711361187645,
+          37.568944957376196
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "increasingautohostilitylast5yrs this neighborhood ",
+        "datetime": "2025-02-03T17:20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47698592944619,
+          37.550042658455546
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "cars can't see pulling out here",
+        "datetime": "2025-02-12T07:26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46909949560732,
+          37.516134086621655
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-01-07T11:26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4963820115451,
+          37.57587530734239
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-26T09:27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48344015330305,
+          37.532564929756404
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "sidewalk too narrow for cycling/pedi traffic",
+        "datetime": "2025-01-15T17:35"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46642304853913,
+          37.59585491399892
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 1,
+        "bhrs3": 1,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-02-26T10:39"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.50649642410785,
+          37.53193533181442
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Dangerous end/merge of bike lane ",
+        "datetime": "2025-03-04T18:47"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48622410237122,
+          37.527630100764675
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Dangerous location for bike lane to end",
+        "datetime": "2025-03-05T18:48"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.43789548339228,
+          37.52381389277732
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Exiting parking garage, 0 visibility to peds",
+        "datetime": "2025-03-10T16:15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.61625838571989,
+          37.50495186601888
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Witness",
+        "injury_type": "Witness",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 1,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-11T17:04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4609598517418,
+          37.552760291941716
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-11T09:09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48000621795656,
+          37.549850120238474
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 1,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-11T10:12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.48007059097291,
+          37.55011806102972
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars are in a hurry to get on the hwy",
+        "datetime": "2025-03-13T23:13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.47948257409207,
+          37.550078346906005
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-13T17:55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4863710999489,
+          37.526753709064074
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Unsafe end to bike lane. Should be illegal ",
+        "datetime": "2025-03-14T08:45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4863710999489,
+          37.526753709064074
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Bicycle",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Unsafe end to bike lane. Should be illegal ",
+        "datetime": "2025-01-01T08:45"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46406054826986,
+          37.55611998352104
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "people fly down monument; hard to cross here",
+        "datetime": "2025-03-14T09:21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.43425577878953,
+          37.54188065647128
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 1,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-13T16:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.68926680088045,
+          37.42468161068217
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars don’t stop for bicycles or pedestrians",
+        "datetime": "2025-03-14T11:08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.43419195764048,
+          37.541977636011005
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Driving",
+        "injury_type": "Witness",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 1,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-14T16:30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.46083096553086,
+          37.49662680481046
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 1,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 1,
+        "bhrs8": 1,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "SPEEDING on Hopkins - very unsafe",
+        "datetime": "2025-03-12T13:16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.42562058533237,
+          37.53172433024051
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 1,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-11T08:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.42585658028278,
+          37.53193022695751
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Walking/Rolling",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 1,
+        "bhrs8": 0,
+        "loc1": 1,
+        "loc2": 0,
+        "loc3": 1,
+        "loc4": 0,
+        "loc5": 1,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-11T08:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.4321363450181,
+          37.53973909442074
+        ]
+      },
+      "properties": {
+        "report_type": "Near Miss",
+        "event_type": "Miss2",
+        "travel_type": "Witness",
+        "injury_type": "Witness",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "",
+        "datetime": "2025-03-12T07:55"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.43568807840349,
+          37.53484079690409
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 1,
+        "bhrs3": 0,
+        "bhrs4": 1,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 1,
+        "loc7": 1,
+        "loc8": 0,
+        "loc9": 0,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "Cars speeding from Canal St entering Expressway ",
+        "datetime": "2025-03-14T11:24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.51114398241045,
+          37.45476087322793
+        ]
+      },
+      "properties": {
+        "report_type": "Dangerous Location",
+        "event_type": "Unsafe",
+        "travel_type": "Driving",
+        "injury_type": "No Inury",
+        "bhrs1": 0,
+        "bhrs2": 0,
+        "bhrs3": 0,
+        "bhrs4": 0,
+        "bhrs5": 0,
+        "bhrs6": 0,
+        "bhrs7": 0,
+        "bhrs8": 0,
+        "loc1": 0,
+        "loc2": 0,
+        "loc3": 0,
+        "loc4": 0,
+        "loc5": 0,
+        "loc6": 0,
+        "loc7": 0,
+        "loc8": 0,
+        "loc9": 1,
+        "loc10": 0,
+        "loc11": 0,
+        "loc12": 0,
+        "loc13": 0,
+        "text": "The reservoir always floods when it rains",
+        "datetime": "2025-03-14T11:32"
+      }
+    }
+  ]
+}
