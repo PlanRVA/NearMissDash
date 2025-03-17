@@ -184,6 +184,14 @@
                                 <label class="custom-control-label" for="bhrs4">Car failing to yield to pedestrian or cyclist</label>
                             </div>
                             <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="bhrs9" id="bhrs9" value="bhrs9">
+                                <label class="custom-control-label" for="bhrs9">Car failing to yield to stop sign</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" name="bhrs10" id="bhrs10" value="bhrs10">
+                                <label class="custom-control-label" for="bhrs10">Car failing to yield to red light</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" name="bhrs5" id="bhrs5" value="bhrs5">
                                 <label class="custom-control-label" for="bhrs5">Car opening door into bike lane</label>
                             </div>
@@ -484,6 +492,8 @@
             const bhrs6 = document.getElementById('bhrs6').checked ? 1 : 0;
             const bhrs7 = document.getElementById('bhrs7').checked ? 1 : 0;
             const bhrs8 = document.getElementById('bhrs8').checked ? 1 : 0;
+            const bhrs9 = document.getElementById('bhrs9').checked ? 1 : 0;
+            const bhrs10 = document.getElementById('bhrs10').checked ? 1 : 0;
             const loc1 = document.getElementById('loc1').checked ? 1 : 0;
             const loc2 = document.getElementById('loc2').checked ? 1 : 0;
             const loc3 = document.getElementById('loc3').checked ? 1 : 0;
@@ -520,6 +530,8 @@
                     bhrs6: bhrs6,
                     bhrs7: bhrs7,
                     bhrs8: bhrs8,
+                    bhrs9: bhrs9,
+                    bhrs10: bhrs10,
                     loc1: loc1,
                     loc2: loc2,
                     loc3: loc3,
