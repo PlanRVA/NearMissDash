@@ -27,7 +27,7 @@ Within the NM folders, there are:
 To make a Near Miss Dash - 
 -branch project.
 -change file paths.
--change json api connection or otherwise.
--change Mapbox basemap to the desired basemap (current one is custom).
+-make config.js file with your api keys for Mapbox and to store the json data.
 -change where map is centered and change initial map icon placement in the apphome.html.
 -change colors and logos.
+-publish!
