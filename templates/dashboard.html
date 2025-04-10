@@ -168,17 +168,14 @@
         <!-- Chart -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-        <script src="charts.js"></script>
+ 
         <script>
         // Have the map, setup the custom base map
-        var accessToken = '';
         var map = L.map('map').setView([37.54679001050363, -77.45031004048063], 9.35);
-        L.tileLayer('', {
-            id: '',  // Your Mapbox style ID
-            accessToken: '',
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             tileSize: 512,
             zoomOffset: -1,
-            attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         leafletImage(map, function(err, canvas) {
